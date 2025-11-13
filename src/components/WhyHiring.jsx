@@ -12,7 +12,7 @@ export default function WhyHiring() {
             Why Hiring Feels Broken Today
           </h1>
           <p className="text-white max-w-2xl mx-auto">
-            Hiring used to be about people. Now it'  s about sifting through piles of data.  Recruiters are overwhelmed, candidates are ghosted, and good talent slips away.          </p>
+            Hiring used to be about people. Now it's about sifting through piles of data.  Recruiters are overwhelmed, candidates are ghosted, and good talent slips away.          </p>
         </div>  
 
         <div className=" mx-auto flex flex-col md:flex-row items-center justify-between max-w-6xl">
