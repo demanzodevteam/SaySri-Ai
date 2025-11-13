@@ -9,7 +9,7 @@ const EnterpriseAI = () => {
                 <div className=" mx-auto flex flex-col md:flex-row items-center justify-between">
 
                     {/* Left Content Section */}
-                    <div className="w-full md:w-1/2 p-4">
+                    <div className="w-full md:w-1/2">
                         <h1 className=" font-bold mb-4 bg-gradient-to-r from-[#CBF0D1] to-[#FFE1C6] text-transparent bg-clip-text">
                             Enterprise-Grade Agentic AI
                             That Thinks, Learns, and Acts for Your Business.
