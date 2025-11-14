@@ -1,9 +1,9 @@
 import React from "react";
-import Person1 from "../../public/images/Person1.png"
-import Person2 from "../../public/images/Person2.png"
-import Person3 from "../../public/images/Person3.png"
-import Person4 from "../../public/images/Person4.png"
-import Person5 from "../../public/images/Person5.png"
+import Person1 from "../../../public/images/Person1.png"
+import Person2 from "../../../public/images/Person2.png"
+import Person3 from "../../../public/images/Person3.png"
+import Person4 from "../../../public/images/Person4.png"
+import Person5 from "../../../public/images/Person5.png"
 
 
 export default function HumanAboutAI() {

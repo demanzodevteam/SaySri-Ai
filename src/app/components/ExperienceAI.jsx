@@ -1,6 +1,6 @@
 import React from 'react';
-import GlobeImg from '../../public/images/hero-img.png'
-import BgImg from '../../public/images/BgIMG.png'
+import GlobeImg from '../../../public/images/hero-img.png'
+import BgImg from '../../../public/images/BgIMG.png'
 
 const ExperienceAI = () => {
     return (
