@@ -1,7 +1,7 @@
 import React from "react";
-import Img1 from "../../../public/images/Robot.webp"
-import Img2 from "../../../public/images/Tablet.webp"
-import Img3 from "../../../public/images/Fighter.webp"
+import Img1 from "../../public/images/Robot.webp"
+import Img2 from "../../public/images/Tablet.webp"
+import Img3 from "../../public/images/Fighter.webp"
 
 export default function LatestInAI() {
   const articles = [

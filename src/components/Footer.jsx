@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../../public/Saysri_Logo.png"
+import Logo from "../../public/Saysri_Logo.png"
 
 export default function Footer() {
     return (

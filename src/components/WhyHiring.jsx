@@ -1,6 +1,6 @@
 import React from "react";
-import ConeImg from "../../../public/images/Cubecone.webp"
-import PaperImg from '../../../public/images/Paper.png'
+import ConeImg from "../../public/images/Cubecone.webp"
+import PaperImg from '../../public/images/Paper.png'
 
 
 export default function WhyHiring() {

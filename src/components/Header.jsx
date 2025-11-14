@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
-import Img from "../../../public/Saysri_Logo.png"
+import Img from "../../public/Saysri_Logo.png"
 
 const navigation = [
   { name: 'Home', href: '#', current: true },

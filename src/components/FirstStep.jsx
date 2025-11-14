@@ -1,10 +1,10 @@
 "use client"
 import React from "react";
 import { motion } from "framer-motion";
-import Img1 from "../../../public/images/UnderstandImg.png"
-import Img2 from "../../../public/images/Precision.png"
-import Img3 from "../../../public/images/Autonomy.png"
-import Img4 from "../../../public/images/VideoImg.png"
+import Img1 from "../../public/images/UnderstandImg.png"
+import Img2 from "../../public/images/Precision.png"
+import Img3 from "../../public/images/Autonomy.png"
+import Img4 from "../../public/images/VideoImg.png"
 const features = [
     {
         titleBg: "Cognition",

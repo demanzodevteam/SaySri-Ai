@@ -1,5 +1,5 @@
 import React from "react";
-import NumberImg from "../../../public/images/Numbers.png"
+import NumberImg from "../../public/images/Numbers.png"
 
 export default function SuccessTestimonials() {
   const testimonials = [

@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../../../public/images/Black_logo.png"
-import Icon1 from "../../../public/images/Group.png"
-import Icon2 from "../../../public/images/Vector.png"
-import Icon3 from "../../../public/images/Group 106.png"
-import ConeImg from "../../../public/images/Cubecone.webp"
-import ShapeTextureImg from "../../../public/images/Shapetexture.webp"
-import GeometricImg from "../../../public/images/Geometric.webp"
+import Logo from "../../public/images/Black_logo.png"
+import Icon1 from "../../public/images/Group.png"
+import Icon2 from "../../public/images/Vector.png"
+import Icon3 from "../../public/images/Group 106.png"
+import ConeImg from "../../public/images/Cubecone.webp"
+import ShapeTextureImg from "../../public/images/Shapetexture.webp"
+import GeometricImg from "../../public/images/Geometric.webp"
 
 
 

@@ -1,7 +1,7 @@
 import React from "react";
-import Img1 from "../../../public/images/Contextual.png"
-import Img2 from "../../../public/images/Adaptive_logic.png"
-import Img3 from "../../../public/images/Autonomous.png"
+import Img1 from "../../public/images/Contextual.png"
+import Img2 from "../../public/images/Adaptive_logic.png"
+import Img3 from "../../public/images/Autonomous.png"
 
 
 
