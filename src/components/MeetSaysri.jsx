@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Logo from "../../public/images/Black_logo.png"
 import Icon1 from "../../public/images/Group.png"
 import Icon2 from "../../public/images/Vector.png"
@@ -7,19 +9,68 @@ import ConeImg from "../../public/images/Cubecone.webp"
 import ShapeTextureImg from "../../public/images/Shapetexture.webp"
 import GeometricImg from "../../public/images/Geometric.webp"
 
-
-
 export default function MeetSaysri() {
+    const containerRef = useRef(null);
+
+    // Scroll progress across the entire section
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start 20px", "end end"],
+    });
+
+    const blocks = [
+        {
+            bg: "bg-[#EFEFEF]",
+            text: "Saysri was born from one simple idea — technology should make work more human, helping teams focus on what truly matters.",
+            icon: Icon1.src,
+        },
+        {
+            bg: "bg-gradient-to-r from-[#CBF0D1] to-[#FFE1C6]",
+            text: "We're a team of engineers, recruiters, and designers building AI that understands context, empathy, and fairness.",
+            icon: Icon2.src,
+        },
+        {
+            bg: "bg-[#EFEFEF]",
+            text: "Our first creation, VbraHire, is transforming how teams hire — with speed, ethics, and intelligence.",
+            icon: Icon3.src,
+        },
+    ];
     return (
-        <div className="w-full container flex flex-col items-center justify-center">
+        <div ref={containerRef} className="w-full container flex flex-col items-center justify-center">
             <div className=" w-full space-y-6">
                 <div className="flex justify-center">
                     <h2 className="flex text-4xl font-bold items-center gap-2 mb-4">
                         Meet <img src={Logo.src} alt="" className="h-15" />
                     </h2>
                 </div>
+                <div>
+                    
+                </div>
+                 {blocks.map((block, i) => {
+                    const targetScale = 1 - (blocks.length - i) * 0.05;
 
-                <div className="flex justify-center">
+                    const scale = useTransform(
+                        scrollYProgress,
+                        [i / blocks.length, 1],
+                        [1, targetScale]
+                    );
+
+                    return (
+                        <motion.div
+                            key={i}
+                            style={{ scale }}
+                            className="flex justify-center sticky top-6 z-10"
+                        >
+                            <div
+                                className={`flex items-center p-6 rounded-xl max-w-2xl ${block.bg}`}
+                            >
+                                <div className="font-normal pr-4">{block.text}</div>
+                                <img src={block.icon} alt="" />
+                            </div>
+                        </motion.div>
+                    );
+                })}
+                {/* <div className="flex justify-center">
                     <div className="flex items-center bg-[#EFEFEF] p-6 rounded-xl max-w-xl">
                         Saysri was born from one simple idea — technology should make work more human, helping teams focus on what truly matters.
                         <img src={Icon1.src} alt="" />
@@ -40,7 +91,7 @@ export default function MeetSaysri() {
                         Our first creation, VbraHire, is transforming how teams hire — with speed, ethics, and intelligence.
                         <img src={Icon3.src} alt="" />
                     </div>
-                </div>
+                </div> */}
             </div>
 
             {/* Second Part */}
@@ -86,6 +137,7 @@ export default function MeetSaysri() {
     );
 }
 
+
 // import React from "react";
 // import Logo from "../../public/images/Black_logo.png"
 // import Icon1 from "../../public/images/Group.png"
@@ -94,8 +146,6 @@ export default function MeetSaysri() {
 // import ConeImg from "../../public/images/Cubecone.webp"
 // import ShapeTextureImg from "../../public/images/Shapetexture.webp"
 // import GeometricImg from "../../public/images/Geometric.webp"
-
-
 
 // export default function MeetSaysri() {
 //     return (
@@ -174,100 +224,3 @@ export default function MeetSaysri() {
 //     );
 // }
 
-// "use client"
-// import { motion } from "framer-motion";
-
-// // OverlapCards.jsx
-// // Uses framer-motion and CSS position:sticky to create overlapping card animations as you scroll.
-// // Pass optional `icons` array of React nodes (e.g. <img src={Icon1.src} />) to show icons.
-// // Props:
-// // - icons: ReactNode[]
-// // - topOffset: number (px) where cards stick, default 28
-// // - overlapScale: number (scale applied to lower cards, default 0.98)
-// // - animationDelayStep: number (stagger delay in seconds, default 0.12)
-
-// export default function OverlapCards({
-//   icons = [],
-//   topOffset = 28,
-//   overlapScale = 0.98,
-//   animationDelayStep = 0.12,
-// }) {
-//   // <-- your provided full cards array integrated here
-//   const cards = [
-//     {
-//       id: 1,
-//       text:
-//         "Saysri was born from one simple idea — technology should make work more human, helping teams focus on what truly matters.",
-//     },
-//     {
-//       id: 2,
-//       text:
-//         "We're a team of engineers, recruiters, and designers building AI that understands context, empathy, and fairness.",
-//       highlighted: true,
-//     },
-//     {
-//       id: 3,
-//       text:
-//         "Our first creation, VbraHire, is transforming how teams hire — with speed, ethics, and intelligence.",
-//     },
-//   ];
-
-//   const cardVariant = {
-//     offscreen: { opacity: 0, y: 50, scale: overlapScale },
-//     onscreen: (i) => ({
-//       opacity: 1,
-//       y: 0,
-//       scale: 1,
-//       transition: { duration: 0.6, delay: i * animationDelayStep, ease: "easeOut" },
-//     }),
-//   };
-
-//   return (
-//     <section className="w-full flex justify-center bg-white py-20">
-//       <div className="w-full max-w-4xl relative">
-//         <div className="h-[20vh]" />
-
-//         <div className="relative h-[120vh]">
-//           <div className="absolute inset-0 flex flex-col items-center justify-start">
-//             {cards.map((c, idx) => {
-//               const isHighlighted = !!c.highlighted;
-//               const bgClass = isHighlighted
-//                 ? "bg-gradient-to-r from-[#CBF0D1] to-[#FFE1C6]"
-//                 : "bg-[#EFEFEF]";
-
-//               // increase zIndex for later cards so they overlap on top
-//               const zIndex = 10 + idx;
-
-//               return (
-//                 <motion.div
-//                   custom={idx}
-//                   key={c.id}
-//                   initial="offscreen"
-//                   whileInView="onscreen"
-//                   viewport={{ once: false, amount: 0.45 }}
-//                   variants={cardVariant}
-//                   className={`sticky top-${topOffset} flex items-center justify-between p-6 rounded-xl max-w-2xl w-11/12 mx-auto mb-8 ${bgClass}`}
-//                   style={{ zIndex }}
-//                 >
-//                   <div className={`font-semibold ${isHighlighted ? "pl-4" : "pr-4"}`}>
-//                     {c.text}
-//                   </div>
-
-//                   <div className="w-12 h-12 flex-shrink-0 ml-4">
-//                     {icons[idx] ? (
-//                       icons[idx]
-//                     ) : (
-//                       <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">Icon</div>
-//                     )}
-//                   </div>
-//                 </motion.div>
-//               );
-//             })}
-//           </div>
-//         </div>
-
-//         <div className="h-[40vh]" />
-//       </div>
-//     </section>
-//   );
-// }
