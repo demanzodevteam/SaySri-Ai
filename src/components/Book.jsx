@@ -8,7 +8,7 @@ import Img3 from "../../public/images/Autonomous.png"
 export default function IntelligenceBeyondAutomation() {
     return (
         <div className="bg-white w-full py-4">
-            <div className="container mx-auto grid grid-cols-1 lg:grid-cols-[0.7fr_1fr] gap-4">
+            <div className="container mx-auto grid  grid-cols-1 lg:grid-cols-[0.7fr_1fr] gap-4">
                 {/* Left Section */}
                 <div className="space-y-14 ">
                     <div>
