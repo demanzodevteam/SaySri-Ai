@@ -81,30 +81,30 @@ function FeatureItem({ feature, index }) {
     const cardEl = cardRef.current;
     if (!root || !titleEl || !cardEl) return;
 
-    gsap.set(titleEl, { scale: 0.7, opacity: 0, transformOrigin: "50% 50%" });
+    gsap.set(titleEl, { scale: 1, opacity: 1, transformOrigin: "50% 50%" });
     gsap.set(cardEl, { y: 20, opacity: 0 });
 
     const titleTrigger = ScrollTrigger.create({
       trigger: root,
-      start: "top 65%", 
+      start: "top 45%", 
       end: "top 85%",  
       onEnter: () => {
         gsap.to(titleEl, {
-          scale: 1,
-          opacity: 0.28,
+          scale: 0.7,
+          opacity: 0.2,
           duration: 0.32,
           ease: "power2.out",
           delay: 0.04 + index * 0.06,
         });
       },
       onLeaveBack: () => {
-        gsap.to(titleEl, { scale: 0.7, opacity: 0, duration: 0.3, ease: "power2.out" });
+        gsap.to(titleEl, { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out" });
       },
     });
 
     const cardTrigger = ScrollTrigger.create({
       trigger: root,
-      start: "top 55%", 
+      start: "top 45%", 
       end: "top 30%",
       onEnter: () => {
         gsap.to(cardEl, {
@@ -129,7 +129,7 @@ function FeatureItem({ feature, index }) {
     <div ref={rootRef} className="relative flex justify-center items-center">
       <div
         ref={titleRef}
-        className="absolute text-[220px] font-bold text-gray-300 select-none pointer-events-none"
+        className="absolute text-[220px] font-bold text-black select-none pointer-events-none"
         aria-hidden
         style={{ transformOrigin: "50% 50%" }}
       >
