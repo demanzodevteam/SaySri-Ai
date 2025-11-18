@@ -15,7 +15,7 @@ export default function MeetSaysri() {
     // Scroll progress across the entire section
     const { scrollYProgress } = useScroll({
         target: containerRef,
-        offset: ["start 20px", "end end"],
+        offset: ["start 10px", "end end"],
     });
 
     const blocks = [
@@ -59,7 +59,7 @@ export default function MeetSaysri() {
                         <motion.div
                             key={i}
                             style={{ scale }}
-                            className="flex justify-center sticky top-6 z-10"
+                            className="flex justify-center sticky top-28 z-10"
                         >
                             <div
                                 className={`flex items-center p-6 rounded-xl max-w-2xl ${block.bg}`}
