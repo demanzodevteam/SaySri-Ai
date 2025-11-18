@@ -1,10 +1,13 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Img1 from "../../public/images/UnderstandImg.png";
 import Img2 from "../../public/images/Precision.png";
 import Img3 from "../../public/images/Autonomy.png";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
@@ -28,32 +31,6 @@ const features = [
 ];
 
 export default function AgenticIntelligence() {
-  const titleVariant = {
-    hidden: { scale: 0.7, opacity: 0 },
-    visible: (custom) => ({
-      scale: 1,
-      opacity: 0.28,
-      transition: {
-        duration: 0.32,
-        ease: "easeOut",
-        delay: 0.04 + custom * 0.06,
-      },
-    }),
-  };
-
-  const cardVariant = {
-    hidden: { y: 20, opacity: 0 },
-    visible: (custom) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-        delay: 0.16 + custom * 0.10,
-      },
-    }),
-  };
-
   return (
     <div className="bg-white w-full">
       <div className="container mx-auto flex items-center justify-center">
@@ -72,8 +49,6 @@ export default function AgenticIntelligence() {
               key={index}
               index={index}
               feature={feature}
-              titleVariant={titleVariant}
-              cardVariant={cardVariant}
             />
           ))}
         </div>
@@ -95,100 +70,85 @@ export default function AgenticIntelligence() {
   );
 }
 
-function FeatureItem({ feature, index, titleVariant, cardVariant }) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  const scrollDirRef = useRef("down");
-  useEffect(() => {
-    let lastY = window.scrollY;
-    let ticking = false;
-
-    function onScroll() {
-      const y = window.scrollY;
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          scrollDirRef.current = y > lastY ? "down" : y < lastY ? "up" : scrollDirRef.current;
-          lastY = y;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+function FeatureItem({ feature, index }) {
+  const rootRef = useRef(null);
+  const titleRef = useRef(null);
+  const cardRef = useRef(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const root = rootRef.current;
+    const titleEl = titleRef.current;
+    const cardEl = cardRef.current;
+    if (!root || !titleEl || !cardEl) return;
 
-    const threshold = 0.5; 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const ratio = entry.intersectionRatio;
+    gsap.set(titleEl, { scale: 0.7, opacity: 0, transformOrigin: "50% 50%" });
+    gsap.set(cardEl, { y: 20, opacity: 0 });
 
-          if (ratio >= threshold) {
-            setVisible(true);
-            return;
-          }
-
-          if (!entry.isIntersecting) {
-            if (scrollDirRef.current === "up") {
-              setVisible(false);
-            }
-            return;
-          }
-
+    const titleTrigger = ScrollTrigger.create({
+      trigger: root,
+      start: "top 65%", 
+      end: "top 85%",  
+      onEnter: () => {
+        gsap.to(titleEl, {
+          scale: 1,
+          opacity: 0.28,
+          duration: 0.32,
+          ease: "power2.out",
+          delay: 0.04 + index * 0.06,
         });
       },
-      { threshold: [0, 0.001, 0.25, threshold] }
-    );
+      onLeaveBack: () => {
+        gsap.to(titleEl, { scale: 0.7, opacity: 0, duration: 0.3, ease: "power2.out" });
+      },
+    });
 
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+    const cardTrigger = ScrollTrigger.create({
+      trigger: root,
+      start: "top 55%", 
+      end: "top 30%",
+      onEnter: () => {
+        gsap.to(cardEl, {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+          delay: 0.16 + index * 0.1,
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(cardEl, { y: 20, opacity: 0, duration: 0.3, ease: "power1.out" });
+      },
+    });
+    return () => {
+      titleTrigger.kill();
+      cardTrigger.kill();
+    };
+  }, [index]);
 
   return (
-    <div ref={ref} className="relative flex justify-center items-center">
-      <motion.div
+    <div ref={rootRef} className="relative flex justify-center items-center">
+      <div
+        ref={titleRef}
         className="absolute text-[220px] font-bold text-gray-300 select-none pointer-events-none"
-        variants={{
-          hidden: { scale: 0.7, opacity: 0 },
-          visible: (i) => ({ scale: 1, opacity: 0.28, transition: { duration: 0.32, ease: "easeOut", delay: 0.04 + i * 0.06 } }),
-        }}
-        custom={index}
-        initial="hidden"
-        animate={visible ? "visible" : "hidden"}
         aria-hidden
         style={{ transformOrigin: "50% 50%" }}
       >
         {feature.titleBg}
-      </motion.div>
+      </div>
 
-      <motion.div
+      <div
+        ref={cardRef}
         className="relative bg-black text-white px-6 py-6 rounded-2xl max-w-[280px] z-10 text-center space-y-4"
-        variants={{
-          hidden: { y: 20, opacity: 0 },
-          visible: (i) => ({ y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut", delay: 0.16 + i * 0.1 } }),
-        }}
-        custom={index}
-        initial="hidden"
-        animate={visible ? "visible" : "hidden"}
       >
         <div className="p-3 rounded-md mb-4 flex justify-center items-center">
           <img src={feature.img} alt={`${feature.titleBg} Illustration`} className="h-14 w-14" />
         </div>
         <h6 className="font-bold">{feature.heading}</h6>
         <p className="text-gray-300 mt-2">{feature.description}</p>
-      </motion.div>
+      </div>
     </div>
   );
 }
-
-
 
 
 

@@ -8,6 +8,7 @@ import About from "../components/About"
 import ExperienceAI from "../components/ExperienceAI"
 import LatestInAI from "../components/LatestinAI"
 import Testimonial from "../components/Testimonials"
+// import ScrollTest from "../components/ScrollTest"
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <About />
         <ExperienceAI />
         <LatestInAI />
+        {/* <ScrollTest /> */}
     </main>
   );
 }
