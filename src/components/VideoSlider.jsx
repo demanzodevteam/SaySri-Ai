@@ -15,7 +15,7 @@ export default function Carousel() {
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
                     spaceBetween={30}
-                    slidesPerView={2}
+                    slidesPerView={3}
                     pagination={{ clickable: true, el: ".custom-pagination" }}
                     loop={true}  
                     autoplay={{
@@ -26,22 +26,22 @@ export default function Carousel() {
                 >
                     <SwiperSlide>
                         <div className="slide-box">
-                            <iframe  src="https://www.youtube.com/embed/n2lr1pCHTgs?list=TLGGRTq-ntUF6LEyMDExMjAyNQ" title="Saysri Vibrahire - Product Introduction video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-120 rounded-xl border-2 border-white"></iframe>
+                            <iframe  src="https://www.youtube.com/embed/n2lr1pCHTgs?list=TLGGRTq-ntUF6LEyMDExMjAyNQ" title="Saysri Vibrahire - Product Introduction video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-100 rounded-xl border-2 border-white"></iframe>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="slide-box">
-                            <iframe  src="https://www.youtube.com/embed/n2lr1pCHTgs?list=TLGGRTq-ntUF6LEyMDExMjAyNQ" title="Saysri Vibrahire - Product Introduction video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-120 rounded-xl border-2 border-white"></iframe>
+                            <iframe  src="https://www.youtube.com/embed/n2lr1pCHTgs?list=TLGGRTq-ntUF6LEyMDExMjAyNQ" title="Saysri Vibrahire - Product Introduction video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-100 rounded-xl border-2 border-white"></iframe>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="slide-box">
-                            <iframe  src="https://www.youtube.com/embed/n2lr1pCHTgs?list=TLGGRTq-ntUF6LEyMDExMjAyNQ" title="Saysri Vibrahire - Product Introduction video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-120 rounded-xl border-2 border-white"></iframe>
+                            <iframe  src="https://www.youtube.com/embed/n2lr1pCHTgs?list=TLGGRTq-ntUF6LEyMDExMjAyNQ" title="Saysri Vibrahire - Product Introduction video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-100 rounded-xl border-2 border-white"></iframe>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="slide-box">
-                            <iframe  src="https://www.youtube.com/embed/n2lr1pCHTgs?list=TLGGRTq-ntUF6LEyMDExMjAyNQ" title="Saysri Vibrahire - Product Introduction video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-120 rounded-xl border-2 border-white"></iframe>
+                            <iframe  src="https://www.youtube.com/embed/n2lr1pCHTgs?list=TLGGRTq-ntUF6LEyMDExMjAyNQ" title="Saysri Vibrahire - Product Introduction video" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen className="w-full h-100 rounded-xl border-2 border-white"></iframe>
                         </div>
                     </SwiperSlide>
 

@@ -25,7 +25,7 @@ export default function LatestInAI() {
   return (
     <div className="bg-white">
       <div className="container mx-auto">
-        <h2 className="font-bold mb-12 text-center">
+        <h2 className="mb-12 text-center">
           Stay Ahead with the Latest in AI and Automation
         </h2>
 

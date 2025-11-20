@@ -38,7 +38,7 @@ export default function HumanAboutAI() {
     return (
         <div className="bg-white container space-y-20">
             <div className="text-center border-t border-[#FEF9F8] pt-8">
-                <h1 className="font-bold mb-4 text-black">
+                <h1 className="mb-4 text-black">
                     Ready to Experience Smarter Business Automation?
                 </h1>
                 <p className="text-black mb-8 max-w-2xl mx-auto">
@@ -56,7 +56,7 @@ export default function HumanAboutAI() {
 
             <div className="mx-auto relative z-10">
                 <div className="mb-12 px-14 flex justify-center gap-10">
-                    <h1 className="font-bold mb-4">
+                    <h1 className="mb-4">
                         About the founders
                     </h1>
                     <p className="">

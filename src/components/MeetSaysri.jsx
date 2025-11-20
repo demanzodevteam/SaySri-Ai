@@ -109,7 +109,7 @@ export default function MeetSaysri() {
             <div className="py-8">
                 <div className="mx-auto">
                     <div className="text-center mb-12">
-                        <h1 className="font-bold  mb-4">
+                        <h1 className="font-  mb-4">
                             Introducing Saysri AI Suite, Engineered for Intelligence.
                         </h1>
                         <p className="text-[#1E1E1E] max-w-4xl mx-auto">
@@ -124,12 +124,10 @@ export default function MeetSaysri() {
                                     className={`relative h-100 ${item.bgType} bg-center flex flex-col justify-end p-6 transition-all duration-500 ease-in-out group-hover:scale-105`}
                                     style={{ backgroundImage: `url(${item.image})` }}
                                 >
-                                    {/* Gradient Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#060606]/40 to-[#060606]/80"></div>
 
-                                    {/* Content */}
                                     <div className="relative z-10">
-                                        <h5 className="text-2xl font-bold text-white mb-2 duration-500 ease-in-out group-hover:-translate-y-4">
+                                        <h5 className="text-2xl font-normal text-white mb-2 duration-500 ease-in-out group-hover:-translate-y-4">
                                             {item.title}
                                         </h5>
                                         <p className="text-white duration-500 ease-in-out group-hover:-translate-y-4">

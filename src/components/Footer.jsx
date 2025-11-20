@@ -8,7 +8,7 @@ export default function Footer() {
                 {/* Top Section: Tagline and Subscription */}
                 <div className="flex flex-col md:flex-row justify-center items-start mb-12 gap-6">
                     <div className="mb-6 md:mb-0">
-                        <h2 className="max-w-lg font-bold mb-4 bg-gradient-to-r from-[#CBF0D1] to-[#FFE1C6] text-transparent bg-clip-text text-4xl md:text-5xl">
+                        <h2 className="max-w-lg mb-4 bg-gradient-to-r from-[#CBF0D1] to-[#FFE1C6] text-transparent bg-clip-text text-4xl md:text-5xl">
                             Saysri.ai — Humanizing AI for the world of work.
                         </h2>
                     </div>
