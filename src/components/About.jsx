@@ -71,7 +71,7 @@ export default function HumanAboutAI() {
                                 <img
                                     src={member.image}
                                     alt={member.name}
-                                    className="w-full h-70 object-cover grayscale rounded-t-2xl"
+                                    className="w-full h-70 object-cover rounded-t-2xl"
                                 />
                             </div>
                             <h6 className="font-normal text-black">{member.name}</h6>

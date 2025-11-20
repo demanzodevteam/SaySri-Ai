@@ -129,7 +129,7 @@ function FeatureItem({ feature, index }) {
         <div className="p-3 rounded-md mb-4 flex justify-center items-center">
           <img src={feature.img} alt={`${feature.titleBg} Illustration`} className="h-14 w-14" />
         </div>
-        <h6 className="font-bold">{feature.heading}</h6>
+        <h6 className="font-normal">{feature.heading}</h6>
         <p className="mt-2">{feature.description}</p>
       </div>
     </div>

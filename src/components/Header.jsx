@@ -45,7 +45,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-transparent backdrop-blur-md pt-4 z-99 sticky top-0">
+    <Disclosure as="nav" className="bg-transparent backdrop-blur-2xl pt-4 z-99 sticky top-0">
       {({ open }) => (
         <>
           <div className="mx-auto container px-4 sm:px-6 !py-0">

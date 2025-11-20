@@ -33,7 +33,7 @@ export default function LatestInAI() {
           {articles.map((article, index) => (
             <div
               key={index}
-              className="bg-white flex overflow-hidden grayscale hover:grayscale-0 transition-all gap-3"
+              className="bg-white flex overflow-hidden transition-all gap-3"
             >
               <img src={article.image} alt=""className=" h-30 w-30 object-cover rounded-xl"/>
               <div className="my-auto">
