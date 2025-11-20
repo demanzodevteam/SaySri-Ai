@@ -14,11 +14,11 @@ export default function Footer() {
                     </div>
                     <div className="flex flex-col md:flex-col items-start space-y-4 sm:space-y-0 md:space-y-2 sm:space-x-4">
                         <p className="">Stay ahead of the hiring revolution.</p>
-                        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 w-full max-w-md mx-auto">
+                        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 w-full max-w-md mx-auto border border-white focus:outline-none rounded-md">
                             <input
                                 type="email"
                                 placeholder="Enter your email..."
-                                className="px-4 py-2 rounded-md border border-white text-white bg-transparent focus:outline-none flex-1"
+                                className="px-4 py-2 border-none text-white bg-transparent focus:outline-none flex-1"
                             />
                             <button className="px-6 py-2 bg-white text-black rounded-md font-semibold hover:bg-gray-200 transition-colors hover:cursor-pointer w-full sm:w-auto">
                                 Subscribe
