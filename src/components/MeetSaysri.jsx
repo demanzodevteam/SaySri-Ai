@@ -8,6 +8,8 @@ import Icon3 from "../../public/images/Group 106.png"
 import ConeImg from "../../public/images/Cubecone.webp"
 import ShapeTextureImg from "../../public/images/Shapetexture.webp"
 import GeometricImg from "../../public/images/Geometric.webp"
+import Girl1Img from "../../public/images/Girl1.webp"
+import Girl2Img from "../../public/images/Girl2.webp"
 
 export default function MeetSaysri() {
     const containerRef = useRef(null);
@@ -54,15 +56,15 @@ export default function MeetSaysri() {
             title: "AI Agentic Consultation",
             description:
                 "Collaborate with Saysri to architect custom AI ecosystems designed for automation, autonomy, and growth.",
-            image: GeometricImg.src,
-            bgType: "bg-contain"
+            image: Girl2Img.src,
+            bgType: "bg-cover"
         },
         {
-            title: "AI Agentic Consultation",
+            title: "Sartup & Enterprise Acceleration",
             description:
-                "Collaborate with Saysri to architect custom AI ecosystems designed for automation, autonomy, and growth.",
-            image: GeometricImg.src,
-            bgType: "bg-contain"
+                "Smart, scalable solutions that help you move faster.",
+            image: Girl1Img.src,
+            bgType: "bg-cover"
         }
     ];
 
@@ -116,15 +118,26 @@ export default function MeetSaysri() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
-                        {Data.map((item,index)=>(
+                        {Data.map((item, index) => (
                             <div key={index} className="rounded-2xl overflow-hidden group">
-                            <div className={`h-100 ${item.bgType} bg-center flex flex-col justify-end p-6  transition-all duration-500 ease-in-out group-hover:scale-105`} style={{ backgroundImage: `url(${item.image})` }}>
-                                <h5 className="text-2xl font-bold text-white mb-2 duration-500 ease-in-out group-hover:-translate-y-4">{item.title}</h5>
-                                <p className="text-white duration-500 ease-in-out group-hover:-translate-y-4">
-                                    Smarter hiring starts here. AI that understands people, not just resumes, for faster, bias-free recruitment.
-                                </p>
+                                <div
+                                    className={`relative h-100 ${item.bgType} bg-center flex flex-col justify-end p-6 transition-all duration-500 ease-in-out group-hover:scale-105`}
+                                    style={{ backgroundImage: `url(${item.image})` }}
+                                >
+                                    {/* Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#060606]/40 to-[#060606]/80"></div>
+
+                                    {/* Content */}
+                                    <div className="relative z-10">
+                                        <h5 className="text-2xl font-bold text-white mb-2 duration-500 ease-in-out group-hover:-translate-y-4">
+                                            {item.title}
+                                        </h5>
+                                        <p className="text-white duration-500 ease-in-out group-hover:-translate-y-4">
+                                            {item.description}                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
                         ))}
                         {/* <div className="rounded-2xl overflow-hidden group">
                             <div className="h-100 bg-contain bg-center flex flex-col justify-end p-6  transition-all duration-500 ease-in-out group-hover:scale-105" style={{ backgroundImage: `url(${ShapeTextureImg.src})` }}>

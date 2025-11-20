@@ -35,7 +35,7 @@ export default function AgenticIntelligence() {
     <div className="bg-white w-full">
       <div className="container mx-auto flex items-center justify-center">
         <div className="text-center flex items-center justify-center flex-col">
-          <h1 className="font-bold mb-4 text-center">Our first step toward Agentic Intelligence.</h1>
+          <h1 className="font-bold mb-4 text-center">Your first step toward Agentic Intelligence.</h1>
           <p className="max-w-2xl mx-auto">
             Saysri builds Agentic AI that goes beyond logic, understanding context, learning independently, and driving enterprise transformation with purpose.
           </p>
@@ -86,8 +86,8 @@ function FeatureItem({ feature, index }) {
 
     const titleTrigger = ScrollTrigger.create({
       trigger: root,
-      start: "top 45%", 
-      end: "top 85%",  
+      start: "top 45%",
+      end: "top 85%",
       onEnter: () => {
         gsap.to(titleEl, {
           scale: 0.7,
@@ -104,7 +104,7 @@ function FeatureItem({ feature, index }) {
 
     const cardTrigger = ScrollTrigger.create({
       trigger: root,
-      start: "top 45%", 
+      start: "top 45%",
       end: "top 30%",
       onEnter: () => {
         gsap.to(cardEl, {
@@ -135,16 +135,15 @@ function FeatureItem({ feature, index }) {
       >
         {feature.titleBg}
       </div>
-
       <div
         ref={cardRef}
-        className="relative bg-black text-white px-6 py-6 rounded-2xl max-w-[280px] z-10 text-center space-y-4"
+        className="shadow-[0_0_84px_0_rgba(210,210,210,0.8)] bg-white relative bg-gradient-to-b from-[#CFEFD0]/50 to-[#F8E4CB]/50 text-black px-6 py-10 rounded-2xl max-w-[280px] z-10 text-center space-y-4"
       >
         <div className="p-3 rounded-md mb-4 flex justify-center items-center">
           <img src={feature.img} alt={`${feature.titleBg} Illustration`} className="h-14 w-14" />
         </div>
         <h6 className="font-bold">{feature.heading}</h6>
-        <p className="text-gray-300 mt-2">{feature.description}</p>
+        <p className="mt-2">{feature.description}</p>
       </div>
     </div>
   );

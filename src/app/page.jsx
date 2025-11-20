@@ -8,7 +8,8 @@ import About from "../components/About"
 import ExperienceAI from "../components/ExperienceAI"
 import LatestInAI from "../components/LatestinAI"
 import Testimonial from "../components/Testimonials"
-// import ScrollTest from "../components/ScrollTest"
+import TrustSlider from "../components/TrustSlider"
+import VideoSlider from "../components/VideoSlider";
 
 
 export default function Home() {
@@ -16,8 +17,9 @@ export default function Home() {
     <main className="flex w-full flex-col items-center justify-between ">
         <EnterpriseAI />
         <MeetSaysri />
-        <WhyHiring />
+        <TrustSlider />
         <FirstStep />
+        <VideoSlider />
         <Book />
         <Testimonial />
         <About />
