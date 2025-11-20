@@ -55,7 +55,7 @@ export default function HumanAboutAI() {
             </div>
 
             <div className="mx-auto relative z-10">
-                <div className="mb-12 px-14 flex justify-center gap-10">
+                <div className="mb-12 md:px-14 flex flex-col md:flex-row justify-center md:gap-10">
                     <h1 className="mb-4">
                         About the founders
                     </h1>
