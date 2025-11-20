@@ -89,7 +89,7 @@ const EnterpriseAI = () => {
 
                         {/* Left Content Section */}
                         <div className="w-full md:w-1/2">
-                            <h1 className=" font-bold mb-4 text-black">
+                            <h1 className=" font-normal mb-4 text-black">
                                 Enterprise-Grade Agentic AI
                                 That Thinks, Learns, and Acts for Your Business.
                             </h1>

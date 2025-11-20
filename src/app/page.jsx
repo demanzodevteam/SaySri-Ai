@@ -20,10 +20,10 @@ export default function Home() {
         <TrustSlider />
         <FirstStep />
         <VideoSlider />
-        <Book />
-        <Testimonial />
+        {/* <Book /> */}
+        {/* <Testimonial /> */}
         <About />
-        <ExperienceAI />
+        {/* <ExperienceAI /> */}
         <LatestInAI />
         {/* <ScrollTest /> */}
     </main>

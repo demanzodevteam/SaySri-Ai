@@ -14,7 +14,7 @@ h1,h2,h3,h4,h5,h6{
   font-family: Cal Sans, sans-serif;
 }
 h1 {
-  font-size: clamp(22px, 3vw + 3rem, 44px);
+  font-size: clamp(22px, 3vw + 3rem, 48px);
   line-height: 52px;
 }
 h2 {

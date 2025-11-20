@@ -36,12 +36,28 @@ export default function HumanAboutAI() {
     ];
 
     return (
-        <div className="bg-white container">
+        <div className="bg-white container space-y-20">
+            <div className="text-center border-t border-[#FEF9F8] pt-8">
+                <h1 className="font-bold mb-4 text-black">
+                    Ready to Experience Smarter Business Automation?
+                </h1>
+                <p className="text-black mb-8 max-w-2xl mx-auto">
+                    See how Saysri.ai can help your team work faster and smarter.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <button className="bg-[#8CB183] text-white px-6 py-3 rounded-xl font-semibold border-2 border-transparent hover:bg-transparent hover:text-[#8CB183] hover:border-[#8CB183] transition hover:cursor-pointer">
+                        BOOK A FREE DEMO
+                    </button>
+                    <button className="bg-transparent border-2 border-transparent text-black px-6 py-3 rounded-xl font-bold hover:bg-black hover:text-white transition hover:cursor-pointer">
+                        TALK TO AN EXPERT →
+                    </button>
+                </div>
+            </div>
 
             <div className="mx-auto relative z-10">
-                <div className="mb-12 px-14 flex gap-10">
+                <div className="mb-12 px-14 flex justify-center gap-10">
                     <h1 className="font-bold mb-4">
-                        We’re Human About AI
+                        About the founders
                     </h1>
                     <p className="">
                         Behind every Saysri algorithm is a team obsessed with empathy.<br></br> We’re not building bots — we’re building better ways for humans to connect.
@@ -58,13 +74,13 @@ export default function HumanAboutAI() {
                                     className="w-full h-70 object-cover grayscale rounded-t-2xl"
                                 />
                             </div>
-                            <h6 className="font-semibold text-gray-800">{member.name}</h6>
+                            <h6 className="font-normal text-black">{member.name}</h6>
                             <p className="">{member.role}</p>
                         </div>
                     ))}
                 </div>
 
-                <div className="relative flex justify-center items-center ">
+                {/* <div className="relative flex justify-center items-center ">
                     <div className="absolute text-[160px] font-bold text-gray-300 opacity-30 select-none">
                         Coming Soon
                     </div>
@@ -77,7 +93,7 @@ export default function HumanAboutAI() {
                             We’re exploring AI solutions that help companies retain, develop, and empower people throughout their journey.
                         </p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
