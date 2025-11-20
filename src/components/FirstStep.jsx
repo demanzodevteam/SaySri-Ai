@@ -43,7 +43,7 @@ export default function AgenticIntelligence() {
       </div>
 
       <div className="max-w-4xl mx-auto items-center">
-        <div className="space-y-12">
+        <div className="space-y-24">
           {features.map((feature, index) => (
             <FeatureItem
               key={index}

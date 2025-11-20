@@ -12,15 +12,15 @@ export default function Footer() {
                             Saysri.ai — Humanizing AI for the world of work.
                         </h2>
                     </div>
-                    <div className="flex flex-row md:flex-col items-start space-y-4 sm:space-y-0 md:space-y-2 sm:space-x-4">
+                    <div className="flex flex-col md:flex-col items-start space-y-4 sm:space-y-0 md:space-y-2 sm:space-x-4">
                         <p className="">Stay ahead of the hiring revolution.</p>
-                        <div className="flex space-x-">
+                        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 w-full max-w-md mx-auto">
                             <input
                                 type="email"
                                 placeholder="Enter your email..."
-                                className="px-4 py-2 rounded-md border border-white text-white focus:outline-none"
+                                className="px-4 py-2 rounded-md border border-white text-white bg-transparent focus:outline-none flex-1"
                             />
-                            <button className="px-6 py-2 bg-white text-black rounded-md font-semibold hover:bg-gray-200 transition-colors hover:cursor-pointer">
+                            <button className="px-6 py-2 bg-white text-black rounded-md font-semibold hover:bg-gray-200 transition-colors hover:cursor-pointer w-full sm:w-auto">
                                 Subscribe
                             </button>
                         </div>
@@ -29,7 +29,7 @@ export default function Footer() {
 
                 {/* Bottom Section: Links and Logo */}
                 <div className="flex flex-col md:flex-row justify-between items-center border-t border-[#8D8D8D66]">
-                    <div className="w-[45%] grid grid-cols-2 sm:grid-cols-3 gap-6 mb-6 md:mb-0">
+                    <div className=" w-full md:w-[45%] grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6 md:mb-0">
                         <div className="space-y-3">
                             <a href="#" className="block text-white hover:text-white transition-colors">About</a>
                             <a href="#" className="block text-white hover:text-white transition-colors mt-2">VibraHire</a>
@@ -43,7 +43,7 @@ export default function Footer() {
                             <a href="#" className="block text-white hover:text-white transition-colors mt-2">Terms of Service</a>
                         </div>
                     </div>
-                    <div className="w-[55%] border-s border-[#8D8D8D66] px-10 py-10">
+                    <div className="w-full md:w-[55%] border-t border-[#8D8D8D66] md:border-s border-[#8D8D8D66] md:px-10 py-10">
                         <div className="flex justify-between items-center ">
                             <div className="">
                                 <img

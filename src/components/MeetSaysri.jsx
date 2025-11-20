@@ -13,31 +13,62 @@ export default function MeetSaysri() {
     const containerRef = useRef(null);
 
     // Scroll progress across the entire section
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start 10px", "end end"],
-    });
+    // const { scrollYProgress } = useScroll({
+    //     target: containerRef,
+    //     offset: ["start 10px", "end end"],
+    // });
 
-    const blocks = [
+    // const blocks = [
+    //     {
+    //         bg: "bg-[#EFEFEF]",
+    //         text: "Saysri was born from one simple idea — technology should make work more human, helping teams focus on what truly matters.",
+    //         icon: Icon1.src,
+    //     },
+    //     {
+    //         bg: "bg-gradient-to-r from-[#CBF0D1] to-[#FFE1C6]",
+    //         text: "We're a team of engineers, recruiters, and designers building AI that understands context, empathy, and fairness.",
+    //         icon: Icon2.src,
+    //     },
+    //     {
+    //         bg: "bg-[#EFEFEF]",
+    //         text: "Our first creation, VbraHire, is transforming how teams hire — with speed, ethics, and intelligence.",
+    //         icon: Icon3.src,
+    //     },
+    // ];
+    const Data = [
         {
-            bg: "bg-[#EFEFEF]",
-            text: "Saysri was born from one simple idea — technology should make work more human, helping teams focus on what truly matters.",
-            icon: Icon1.src,
+            title: "VibraHire by Saysri",
+            description:
+                "Smarter hiring starts here. AI that understands people, not just resumes, for faster, bias-free recruitment.",
+            image: ShapeTextureImg.src,
+            bgType: "bg-contain"
         },
         {
-            bg: "bg-gradient-to-r from-[#CBF0D1] to-[#FFE1C6]",
-            text: "We're a team of engineers, recruiters, and designers building AI that understands context, empathy, and fairness.",
-            icon: Icon2.src,
+            title: "IntelliBooks by Saysri",
+            description:
+                "AI that transforms documents into decisions automating reports, insights, and enterprise data processing.",
+            image: ConeImg.src,
+            bgType: "bg-cover"
         },
         {
-            bg: "bg-[#EFEFEF]",
-            text: "Our first creation, VbraHire, is transforming how teams hire — with speed, ethics, and intelligence.",
-            icon: Icon3.src,
+            title: "AI Agentic Consultation",
+            description:
+                "Collaborate with Saysri to architect custom AI ecosystems designed for automation, autonomy, and growth.",
+            image: GeometricImg.src,
+            bgType: "bg-contain"
         },
+        {
+            title: "AI Agentic Consultation",
+            description:
+                "Collaborate with Saysri to architect custom AI ecosystems designed for automation, autonomy, and growth.",
+            image: GeometricImg.src,
+            bgType: "bg-contain"
+        }
     ];
+
     return (
         <div ref={containerRef} className="w-full container flex flex-col items-center justify-center">
-            <div className=" w-full space-y-6">
+            {/* <div className=" w-full space-y-6">
                 <div className="flex justify-center">
                     <h2 className="flex text-4xl font-bold items-center gap-2 mb-4">
                         Meet <img src={Logo.src} alt="" className="h-15" />
@@ -70,32 +101,10 @@ export default function MeetSaysri() {
                         </motion.div>
                     );
                 })}
-                {/* <div className="flex justify-center">
-                    <div className="flex items-center bg-[#EFEFEF] p-6 rounded-xl max-w-xl">
-                        Saysri was born from one simple idea — technology should make work more human, helping teams focus on what truly matters.
-                        <img src={Icon1.src} alt="" />
-                    </div>
-                </div>
-
-                <div className="flex justify-center">
-                    <div className="flex items-center justify-center bg-gradient-to-r from-[#CBF0D1] to-[#FFE1C6] p-6 rounded-xl max-w-2xl">
-                        <div className="font-semibold pl-4">
-                            We're a team of engineers, recruiters, and designers building AI that understands context, empathy, and fairness.
-                        </div>
-                        <img src={Icon2.src} alt="" />
-                    </div>
-                </div>
-
-                <div className="flex justify-center">
-                    <div className="flex items-center bg-[#EFEFEF] p-6 rounded-xl max-w-xl ">
-                        Our first creation, VbraHire, is transforming how teams hire — with speed, ethics, and intelligence.
-                        <img src={Icon3.src} alt="" />
-                    </div>
-                </div> */}
-            </div>
+            </div> */}
 
             {/* Second Part */}
-            <div className="py-8 px-4">
+            <div className="py-8">
                 <div className="mx-auto">
                     <div className="text-center mb-12">
                         <h1 className="font-bold  mb-4">
@@ -106,8 +115,18 @@ export default function MeetSaysri() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-10">
-                        <div className="rounded-2xl overflow-hidden group">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
+                        {Data.map((item,index)=>(
+                            <div key={index} className="rounded-2xl overflow-hidden group">
+                            <div className={`h-100 ${item.bgType} bg-center flex flex-col justify-end p-6  transition-all duration-500 ease-in-out group-hover:scale-105`} style={{ backgroundImage: `url(${item.image})` }}>
+                                <h5 className="text-2xl font-bold text-white mb-2 duration-500 ease-in-out group-hover:-translate-y-4">{item.title}</h5>
+                                <p className="text-white duration-500 ease-in-out group-hover:-translate-y-4">
+                                    Smarter hiring starts here. AI that understands people, not just resumes, for faster, bias-free recruitment.
+                                </p>
+                            </div>
+                        </div>
+                        ))}
+                        {/* <div className="rounded-2xl overflow-hidden group">
                             <div className="h-100 bg-contain bg-center flex flex-col justify-end p-6  transition-all duration-500 ease-in-out group-hover:scale-105" style={{ backgroundImage: `url(${ShapeTextureImg.src})` }}>
                                 <h5 className="text-2xl font-bold text-white mb-2 duration-500 ease-in-out group-hover:-translate-y-4">VibraHire by Saysri</h5>
                                 <p className="text-white duration-500 ease-in-out group-hover:-translate-y-4">
@@ -129,6 +148,13 @@ export default function MeetSaysri() {
                                     Collaborate with Saysri to architect custom AI ecosystems designed for automation, autonomy, and growth.                                </p>
                             </div>
                         </div>
+                        <div className="rounded-2xl overflow-hidden group">
+                            <div className="h-100 bg-contain bg-center flex flex-col justify-end p-6 transition-all duration-500 ease-in-out group-hover:scale-105" style={{ backgroundImage: `url(${GeometricImg.src})` }}>
+                                <h5 className="text-2xl font-bold text-white mb-2 duration-500 ease-in-out group-hover:-translate-y-4">AI Agentic Consultation</h5>
+                                <p className="text-white duration-500 ease-in-out group-hover:-translate-y-4">
+                                    Collaborate with Saysri to architect custom AI ecosystems designed for automation, autonomy, and growth.                                </p>
+                            </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

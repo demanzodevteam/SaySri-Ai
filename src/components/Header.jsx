@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
-import Img from "../../public/Saysri_Logo.png"
+import Img from "../../public/images/Black_logo.png"
 
 const navigation = [
   { name: 'Home', href: '#', current: true },
@@ -49,10 +49,10 @@ export default function Navbar() {
       {({ open }) => (
         <>
           <div className="mx-auto container px-4 sm:px-6 !py-0">
-            <div className="relative flex h-20 items-center justify-between">
+            <div className="relative flex h-20 items-center justify-between ">
 
               {/* Mobile menu button */}
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden sticky top-0">
                 <Disclosure.Button className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -126,7 +126,7 @@ export default function Navbar() {
               <div className="flex items-center space-x-3">
                 <button
                   type="button"
-                  className="hidden sm:inline-flex items-center bg-white text-black font-semibold rounded-md px-4 py-2 border-2 border-transparent hover:bg-transparent hover:text-white hover:border-white transition-all duration-200 hover:cursor-pointer"
+                  className="hidden sm:inline-flex items-center bg-[#8CB183] text-white font-semibold rounded-md px-4 py-2 border-2 border-transparent hover:bg-transparent hover:text-white hover:border-white transition-all duration-200 hover:cursor-pointer"
                 >
                   GET A DEMO
                 </button>
@@ -142,7 +142,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu - full width stacked with collapsible children */}
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="sm:hidden z-99 sticky top-0">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <div key={item.name}>
