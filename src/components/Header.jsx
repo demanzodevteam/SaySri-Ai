@@ -191,7 +191,7 @@
 // }
 
 
-
+import Link from "next/link";
 import { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
@@ -203,7 +203,7 @@ import {
 import Img from "../../public/images/Black_logo.png";
 
 const navigation = [
-  { name: "Home", href: "#", current: true },
+  { name: "Home", href: "/", current: true },
   {
     name: "Solutions",
     href: "#",
@@ -234,7 +234,7 @@ const navigation = [
       { name: "Case Studies", href: "#" },
     ],
   },
-  { name: "Contact", href: "#", current: false },
+  { name: "Contact", href: "/product", current: false },
 ];
 
 function classNames(...classes) {

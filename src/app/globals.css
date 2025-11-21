@@ -14,8 +14,8 @@ h1,h2,h3,h4,h5,h6{
   font-family: Cal Sans, sans-serif;
 }
 h1 {
-  font-size: clamp(22px, 3vw + 3rem, 48px);
-  line-height: 52px;
+  @apply leading-[1.25] text-[clamp(18px,4vw+1rem,28px)];
+  @apply md:text-[clamp(22px,3vw+3rem,48px)] md:leading-[52px];
 }
 h2 {
   font-size: clamp(20px, 2.5vw + 0.8rem, 40px);

@@ -84,7 +84,7 @@ const EnterpriseAI = () => {
 
             <div className="absolute inset-0 bg-black/2"></div>
             <div className="relative bg-transparent w-full">
-                <div className="text-white container mx-auto min-h-screen flex items-center">
+                <div className="text-white container mx-auto min-h-[500px] md:min-h-[600px] flex items-center ">
                     <div className="my-auto flex flex-col md:flex-row items-center justify-between">
 
                         {/* Left Content Section */}

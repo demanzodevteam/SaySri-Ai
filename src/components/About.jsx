@@ -64,7 +64,26 @@ export default function HumanAboutAI() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
+                <div className="my-auto flex flex-col md:flex-row items-center justify-between gap-14 ">
+                        <div className="w-full md:w-1/2">
+                            <img src={Person4.src} alt="" className="w-full h-[520px] object-cover rounded-xl"/>
+                        </div>
+                        <div className="w-full md:w-1/2">
+                            <h2 className=" font-normal mb-4 text-black">
+                                About th founder
+                            </h2>
+                            <p className="mb-8 text-black">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum corrupti voluptatibus, impedit repellendus cum totam suscipit optio beatae pariatur. Corporis eos cum eius obcaecati vel, modi, dolorem ad illo, praesentium libero velit facere est suscipit? Reiciendis pariatur doloremque quos perspiciatis quasi saepe inventore ipsa eveniet maiores, porro voluptatibus, laudantium dignissimos nesciunt nemo. Exercitationem autem nesciunt hic accusantium fugiat id, delectus fuga voluptatum perspiciatis illo laboriosam consequuntur molestias nam, error quidem pariatur corporis. Quas magni, fugit at facilis ut voluptatibus ullam qui consequatur dignissimos rerum fuga? Fugit corporis dicta veritatis porro officiis assumenda autem laudantium, fugiat commodi perferendis aspernatur sapiente rerum.From recruitment to business intelligence, Saysri.ai builds AI agents that adapt to your enterprise and execute with precision.</p>
+
+                            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                                <button className="bg-[#8CB183] text-white px-6 py-3 rounded-xl font-semibold border-3 border-transparent hover:bg-transparent hover:text-[#8CB183] hover:border-[#8CB183] transition hover:cursor-pointer">
+                                    Contact us
+                                </button>
+                            </div>
+                        </div>
+                       
+                    </div>    
+                {/* <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
                     {teamMembers.map((member, index) => (
                         <div key={index} className="text-center">
                             <div className="w-full mx-auto mb-4 overflow-hidden  ">
@@ -78,7 +97,7 @@ export default function HumanAboutAI() {
                             <p className="">{member.role}</p>
                         </div>
                     ))}
-                </div>
+                </div> */}
 
                 {/* <div className="relative flex justify-center items-center ">
                     <div className="absolute text-[160px] font-bold text-gray-300 opacity-30 select-none">
