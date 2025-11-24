@@ -54,3 +54,49 @@ h6 {
     var(--r) calc(100% - var(--p) - var(--b)/2) 0 calc(var(--p) - var(--b)/2)/
     0 0 var(--h) 0;
 }
+.tooltiptransparent {
+  position: relative;
+  padding: 0.8em 1.3rem;
+  --b: 2.2em; /* arrow width */
+  --h: 1em; /* arrow height */
+  --p: 0%;  /* arrow position (0% left — 100% right) */
+  --r: 0.5em; /* corner radius */
+  --border: blue; /* border color */
+
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  
+  clip-path: polygon(
+    0 100%, 0 0, 100% 0, 100% 100%,
+    min(100%, var(--p) + var(--b)/2) 100%,
+    var(--p) calc(100% + var(--h)),
+    max(0%, var(--p) - var(--b)/2) 100%
+  );
+}
+
+/* Arrow border matching bubble border */
+.tooltiptransparent::after {
+  content: "";
+  position: absolute;
+  bottom: calc(-1 * var(--h));
+  left: calc(var(--p) - var(--b)/2);
+  width: 0;
+  height: 0;
+  border-left: calc(var(--b) / 2) solid transparent;
+  border-right: calc(var(--b) / 2) solid transparent;
+  border-top: var(--h) solid var(--border);
+}
+
+/* Hollow center so arrow is transparent */
+.tooltiptransparent::before {
+  content: "";
+  position: absolute;
+  bottom: calc(-1 * var(--h) + 2px);
+  left: calc(var(--p) - var(--b)/2 + 2px);
+  width: 0;
+  height: 0;
+  border-left: calc(var(--b)/2 - 2px) solid transparent;
+  border-right: calc(var(--b)/2 - 2px) solid transparent;
+  border-top: calc(var(--h) - 2px) solid white; /* match page bg color */
+}

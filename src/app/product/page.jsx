@@ -4,6 +4,8 @@ import VibraHireSection from "../../components/VibraHeroSection";
 import VibraProcess from "../../components/VibraProcess";
 import WhyVibraHire from "../../components/WhyVibraHire";
 import ChaosToClarity from "../../components/ChaosToClarity";
+import ActionPoints from "../../components/ActionPoints"
+import BookDemo from "../../components/BookDemo"
 
 export default function Productpage() {
   const sectionOne = {
@@ -41,6 +43,8 @@ export default function Productpage() {
       <WhyHiring {...sectionTwo} bgColor="bg-[#DFFFE7]" reverse={true} />
       <WhyVibraHire />
       <ChaosToClarity />
+      <ActionPoints />
+      <BookDemo />
     </main>
   );
 }

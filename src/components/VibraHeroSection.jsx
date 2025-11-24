@@ -1,6 +1,6 @@
 import React from "react";
 import VibraLogo from "../../public/images/VibraHireLogo.png"
-import VideoSlider from "../../src/components/VideoSlider"
+import ImageSlider from "../../src/components/ImageSlider"
 
 export default function VibraHeroSection() {
   return (
@@ -19,9 +19,9 @@ export default function VibraHeroSection() {
         </p>
       </div>
 
-      <div className="flex justify-center px-4 mb-6">
-        <div className=" w-full bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
-            {/* <VideoSlider /> */}
+      <div className="flex justify-center max-w-[1600px] mx-auto">
+        <div className=" w-full rounded-xl overflow-hidden">
+            <ImageSlider />
         </div>
       </div>
       <div className="py-16 px-4 text-center">
