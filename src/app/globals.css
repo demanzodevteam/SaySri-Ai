@@ -33,7 +33,7 @@ h6 {
   font-size: clamp(12px, 0.8vw + 0.6rem, 18px);
 }
 .container {
-  @apply py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 px-4 xl:max-w-[1350px];
+  @apply py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 px-4 xl:max-w-[1300px] 2xl:max-w-[1600px];
 }
 .tooltip {
   --b: 2em; /* base */
@@ -55,48 +55,44 @@ h6 {
     0 0 var(--h) 0;
 }
 .tooltiptransparent {
-  position: relative;
-  padding: 0.8em 1.3rem;
-  --b: 2.2em; /* arrow width */
-  --h: 1em; /* arrow height */
-  --p: 0%;  /* arrow position (0% left — 100% right) */
-  --r: 0.5em; /* corner radius */
-  --border: blue; /* border color */
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+.tooltiptransparent {
+  /* triangle dimension */
+  --a: 90deg; /* angle */
+  --h: 1.2em;   /* height */
 
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  
-  clip-path: polygon(
-    0 100%, 0 0, 100% 0, 100% 100%,
-    min(100%, var(--p) + var(--b)/2) 100%,
+  --p: 0%;  /* triangle position (0%:left 100%:right) */
+  --r: 0.6rem; /* the radius */
+  --b: 3px; /* border width  */
+  --c1: #0D6759;
+  --c2: #ffffff;
+
+  padding:  1rem 0.3rem;
+  border-radius: var(--r) var(--r) min(var(--r),100% - var(--p) - var(--h)*tan(var(--a)/2)) min(var(--r),var(--p) - var(--h)*tan(var(--a)/2))/var(--r);
+  clip-path: polygon(0 100%,0 0,100% 0,100% 100%,
+    min(100%,var(--p) + var(--h)*tan(var(--a)/2)) 100%,
     var(--p) calc(100% + var(--h)),
-    max(0%, var(--p) - var(--b)/2) 100%
-  );
+    max(0%  ,var(--p) - var(--h)*tan(var(--a)/2)) 100%);
+  background: var(--c1);
+  border-image: conic-gradient(var(--c1) 0 0) fill 0/
+    var(--r) max(0%,100% - var(--p) - var(--h)*tan(var(--a)/2)) 0 max(0%,var(--p) - var(--h)*tan(var(--a)/2))/0 0 var(--h) 0;
+  position: relative;
 }
-
-/* Arrow border matching bubble border */
-.tooltiptransparent::after {
+.tooltiptransparent:before {
   content: "";
   position: absolute;
-  bottom: calc(-1 * var(--h));
-  left: calc(var(--p) - var(--b)/2);
-  width: 0;
-  height: 0;
-  border-left: calc(var(--b) / 2) solid transparent;
-  border-right: calc(var(--b) / 2) solid transparent;
-  border-top: var(--h) solid var(--border);
-}
-
-/* Hollow center so arrow is transparent */
-.tooltiptransparent::before {
-  content: "";
-  position: absolute;
-  bottom: calc(-1 * var(--h) + 2px);
-  left: calc(var(--p) - var(--b)/2 + 2px);
-  width: 0;
-  height: 0;
-  border-left: calc(var(--b)/2 - 2px) solid transparent;
-  border-right: calc(var(--b)/2 - 2px) solid transparent;
-  border-top: calc(var(--h) - 2px) solid white; /* match page bg color */
+  z-index: -1;
+  inset: 0;
+  padding: var(--b);
+  border-radius: inherit;
+  clip-path: polygon(0 100%,0 0,100% 0,100% 100%,
+    min(100% - var(--b),var(--p) + var(--h)*tan(var(--a)/2) - var(--b)*tan(45deg - var(--a)/4)) calc(100% - var(--b)),
+    var(--p) calc(100% + var(--h) - var(--b)/sin(var(--a)/2)),
+    max(       var(--b),var(--p) - var(--h)*tan(var(--a)/2) + var(--b)*tan(45deg - var(--a)/4)) calc(100% - var(--b)));
+  background: var(--c2) content-box;
+  border-image: conic-gradient(var(--c2) 0 0) fill 0/
+    var(--r) max(var(--b),100% - var(--p) - var(--h)*tan(var(--a)/2)) 0 max(var(--b),var(--p) - var(--h)*tan(var(--a)/2))/0 0 var(--h) 0;
 }

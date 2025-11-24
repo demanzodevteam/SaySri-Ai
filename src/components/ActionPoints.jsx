@@ -17,12 +17,12 @@ export default function ActionPoints() {
           What makes VibraHire different?
         </p>
 
-        <div className="flex flex-col lg:flex-row space-x-8 max-w-3xl mx-auto">
-          <div className="w-[58%] space-y-10">
+        <div className="flex flex-col md:flex-row s-x-8 gap-8 max-w-3xl mx-auto">
+          <div className="w-[100%] md:w-[60%] space-y-10">
             {points.map((point, index) => (
               <div
                 key={index}
-                className="tooltiptransparent  rounded-2xl border-2 border-gray shadow-sm max-w-md"
+                className="tooltiptransparent"
               >
                 <p className="text-gray-700">{point}</p>
               </div>
@@ -30,7 +30,7 @@ export default function ActionPoints() {
           </div>
 
           {/* Right Side: Result Box */}
-          <div className="w-[42%] bg-green-600 text-white p-9 rounded-2xl">
+          <div className="w-[100%] md:w-[40%] bg-green-600 text-white p-9 rounded-2xl">
             <p className="text-xl font-semibold">
               The result: faster hiring, stronger alignment, and scalable intelligence that grows with your enterprise.
             </p>

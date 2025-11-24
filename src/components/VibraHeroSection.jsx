@@ -20,7 +20,7 @@ export default function VibraHeroSection() {
       </div>
 
       <div className="flex justify-center max-w-[1600px] mx-auto">
-        <div className=" w-full rounded-xl overflow-hidden">
+        <div className="w-full rounded-xl overflow-hidden">
             <ImageSlider />
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function VibraHeroSection() {
           <div className="mx-auto">
             <h2 className="font-normal mb-6">Built for Recruiters Who Think Ahead</h2>
 
-            <div className="mb-6 flex items-center justify-center gap-4">
+            <div className="mb-6 flex flex-col md:flex-row flex-col-reverse items-center justify-center gap-4">
               <p className="tooltip font-normal text-white">
                 Forget filters and forms.
               </p>

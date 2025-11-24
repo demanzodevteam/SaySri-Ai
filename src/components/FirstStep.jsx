@@ -43,7 +43,7 @@ export default function AgenticIntelligence() {
       </div>
 
       <div className="max-w-4xl mx-auto items-center">
-        <div className="space-y-24 pb-20">
+        <div className="space-y-8 md:space-y-24 pb-20">
           {features.map((feature, index) => (
             <FeatureItem
               key={index}
@@ -116,7 +116,7 @@ function FeatureItem({ feature, index }) {
     <div ref={rootRef} className="relative flex justify-center items-center">
       <div
         ref={titleRef}
-        className="absolute text-[220px] font-bold text-black select-none pointer-events-none"
+        className="absolute text-[80px] md:text-[220px] font-bold text-black select-none pointer-events-none"
         aria-hidden
         style={{ transformOrigin: "50% 50%" }}
       >

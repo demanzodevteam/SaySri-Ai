@@ -17,12 +17,27 @@ export default function Carousel() {
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={20}
-                    slidesPerView={2}
                     loop={true}
                     autoplay={{
-                        delay: 1300,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: false
+                        delay: 1300
+                    }}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                            spaceBetween: 30,
+                        },
+                        1600: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
                     }}
                 >
                     <SwiperSlide>

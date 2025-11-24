@@ -204,37 +204,29 @@ import Img from "../../public/images/Black_logo.png";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
+  { name: "About", href: "#", current: false, },
   {
-    name: "Solutions",
+    name: "Products",
     href: "#",
     current: false,
     children: [
-      { name: "Analytics", href: "#" },
-      { name: "Automation", href: "#" },
-      { name: "Integrations", href: "#" },
+      { name: "VibraHire", href: "/product" },
+      { name: "Intellibooks", href: "#" },
     ],
   },
+  { name: "Services ", href: "#", current: false },
   {
-    name: "Company",
-    href: "#",
-    current: false,
-    children: [
-      { name: "About Us", href: "#" },
-      { name: "Careers", href: "#" },
-      { name: "Press", href: "#" },
-    ],
-  },
-  {
-    name: "Insights",
+    name: "Resources",
     href: "#",
     current: false,
     children: [
       { name: "Blog", href: "#" },
-      { name: "Resources", href: "#" },
       { name: "Case Studies", href: "#" },
     ],
   },
-  { name: "Contact", href: "/product", current: false },
+  { name: "Partners", href: "#", current: false },
+  { name: "Careers", href: "#", current: false },
+  { name: "Contact", href: "#", current: false },
 ];
 
 function classNames(...classes) {
