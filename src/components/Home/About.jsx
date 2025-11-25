@@ -1,15 +1,13 @@
 "use client"
-import React, { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsapAnimations } from "../Animation/Animations";
 import Person1 from "../../../public/images/Person1.png"
 import Person2 from "../../../public/images/Person2.png"
 import Person3 from "../../../public/images/Person3.png"
 import Person4 from "../../../public/images/Person4.png"
 import Person5 from "../../../public/images/Person5.png"
-gsap.registerPlugin(ScrollTrigger);
 
 export default function HumanAboutAI() {
+    gsapAnimations();
     const teamMembers = [
         {
             name: "Emma Collins",
@@ -37,29 +35,7 @@ export default function HumanAboutAI() {
             image: Person5.src,
         },
     ];
-    const fadeUpRef = useRef(null);
-    useEffect(() => {
-        const elems = gsap.utils.toArray(".fade-up");
-        elems.forEach((el) => {
-            gsap.fromTo(
-                el,
-                { autoAlpha: 0, y: 40 },
-                {
-                    autoAlpha: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 80%",
-                        toggleActions: "restart none none reset",
-                    },
-                }
-            );
-        });
-    }, []);
-
-
+    
     return (
         <div className="bg-white container space-y-20">
             <div className="text-center border-t border-[#FEF9F8] pt-8 fade-up" >

@@ -1,6 +1,9 @@
+"use client"
 import React from "react";
+import { gsapAnimations } from "./Animation/Animations";
 
 export default function WhyVibraHire() {
+    gsapAnimations();
     const reasons = [
         {
             number: "1",
@@ -32,18 +35,18 @@ export default function WhyVibraHire() {
     return (
         <div className="w-full">
             <div className="container mx-auto">
-                <h2 className="text-center mb-12">
+                <h2 className="text-center mb-12 fade-up">
                     Why Enterprises Choose VibraHire
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {reasons.map((reason, index) => (
                         <div
                             key={index}
-                            className="group p-8 space-y-2 flex flex-col items-center justify-center text-center rounded-2xl shadow-md bg-[#EBEBEB] hover:bg-gradient-to-b from-[#DCFFE1] to-[#B9F8BF] transition-all duration-300"
+                            className="fade-scale group p-8 space-y-2 flex flex-col items-center justify-center text-center rounded-2xl shadow-md bg-[#EBEBEB] hover:bg-gradient-to-b from-[#DCFFE1] to-[#B9F8BF] "
                         >
-                            <h1 className="group-hover:text-[#06A52D] transition-all duration-300">{reason.number}</h1>
-                            <h6 className="">{reason.title}</h6>
-                            <p className="">{reason.description}</p>
+                            <h1 className="group-hover:text-[#06A52D]  fade-up">{reason.number}</h1>
+                            <h6 className=" fade-up">{reason.title}</h6>
+                            <p className=" fade-up">{reason.description}</p>
                         </div>
                     ))}
                 </div>

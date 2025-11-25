@@ -1,6 +1,9 @@
+"use client"
 import React from "react";
+import { gsapAnimations } from "./Animation/Animations";
 
 export default function ActionPoints() {
+  gsapAnimations();
   const points = [
     "It doesn't follow commands — it interprets goals.",
     "It doesn't automate steps — it creates pathways.",
@@ -10,10 +13,10 @@ export default function ActionPoints() {
   return (
     <div className="w-full">
       <div className="container mx-auto">
-        <h1 className="text-center mb-4">
+        <h1 className="text-center mb-4 fade-up">
           Agentic Intelligence in Action
         </h1>
-        <p className="text-center mb-12">
+        <p className="text-center mb-12 fade-up">
           What makes VibraHire different?
         </p>
 
@@ -22,14 +25,13 @@ export default function ActionPoints() {
             {points.map((point, index) => (
               <div
                 key={index}
-                className="tooltiptransparent"
+                className="tooltiptransparent fade-up"
               >
                 <p className="text-gray-700">{point}</p>
               </div>
             ))}
           </div>
 
-          {/* Right Side: Result Box */}
           <div className="w-[100%] md:w-[40%] bg-green-600 text-white p-9 rounded-2xl">
             <p className="text-xl font-semibold">
               The result: faster hiring, stronger alignment, and scalable intelligence that grows with your enterprise.

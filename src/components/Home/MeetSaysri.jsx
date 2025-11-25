@@ -2,20 +2,18 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { gsapAnimations } from "../Animation/Animations";
 import ConeImg from "../../../public/images/Cubecone.webp";
 import ShapeTextureImg from "../../../public/images/Shapetexture.webp";
 import Girl1Img from "../../../public/images/Girl1.webp";
 import Girl2Img from "../../../public/images/Girl2.webp";
-import GeometricImg from "../../../public/images/Geometric.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function MeetSaysri() {
+    gsapAnimations();
     const sectionRef = useRef(null);
     const cardsRef = useRef([]);
-    const fadeUpRef = useRef(null);
-
     const Data = [
         {
             title: "VibraHire by Saysri",
@@ -46,10 +44,8 @@ export default function MeetSaysri() {
             bgType: "bg-cover",
         },
     ];
-
     useEffect(() => {
         if (!sectionRef.current) return;
-
         const ctx = gsap.context(() => {
             const totalCards = cardsRef.current.length;
 
@@ -57,13 +53,12 @@ export default function MeetSaysri() {
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top top",
-                    // give one viewport height of scroll per card
                     end: () => "+=" + (window.innerHeight * (totalCards - 1)),
                     scrub: 1,
-                    pin: true,          // section stays fixed
-                    pinSpacing: true,   // keeps layout stable before/after
+                    pin: true,          
+                    pinSpacing: true,   
                     snap: {
-                        snapTo: "labelsDirectional", // one card per scroll step
+                        snapTo: "labelsDirectional", 
                         duration: 0.4,
                         delay: 0.1,
                         ease: "power1.inOut",
@@ -78,7 +73,7 @@ export default function MeetSaysri() {
                 tl.addLabel(label);
                 tl.fromTo(
                     card,
-                    { y: 80, opacity: 0 }, // fade in from down
+                    { y: 80, opacity: 0 },
                     {
                         y: 0,
                         opacity: 1,
@@ -92,28 +87,7 @@ export default function MeetSaysri() {
 
         return () => ctx.revert();
     }, []);
-    useEffect(() => {
-    if (!fadeUpRef.current) return;
-
-    gsap.fromTo(
-        fadeUpRef.current,
-        { autoAlpha: 0, y: 40 },
-        {
-            autoAlpha: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: fadeUpRef.current,
-                start: "top 90%",
-                toggleActions: "restart none none none ",
-            },
-        }
-    );
-    }, []);
-
-
-
+   
     return (
         <section
             ref={sectionRef}
@@ -122,7 +96,7 @@ export default function MeetSaysri() {
             <div className="w-full container" >
                 <div className="py-8">
                     <div className="mx-auto">
-                        <div className="text-center mb-12"  ref={fadeUpRef}>
+                        <div className="text-center mb-12 fade-up">
                             <h1 className="font- mb-4">
                                 Introducing Saysri AI Suite, Engineered for Intelligence.
                             </h1>
@@ -133,15 +107,14 @@ export default function MeetSaysri() {
                                 self-evolving systems.
                             </p>
                         </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {Data.map((item, index) => (
                                 <div
                                     key={index}
                                     ref={(el) => {
                                         if (el) cardsRef.current[index] = el;
                                     }}
-                                    className="rounded-2xl overflow-hidden group opacity-0" // GSAP reveals
+                                    className="rounded-2xl overflow-hidden group opacity-0" 
                                 >
                                     <div
                                         className={`relative h-95 ${item.bgType} bg-center flex flex-col justify-end p-6 transition-all duration-500 ease-in-out group-hover:scale-105`}

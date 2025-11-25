@@ -1,9 +1,12 @@
+"use client"
 import React from "react";
+import { gsapAnimations } from "./Animation/Animations";
 import Process1Img from "../../public/images/Process1.webp"
 import Process2Img from "../../public/images/Process2.webp"
 import Process3Img from "../../public/images/Process3.webp"
 
 export default function VibraHireProcess() {
+  gsapAnimations();
   const steps = [
     {
       title: "Understands",
@@ -28,10 +31,10 @@ export default function VibraHireProcess() {
   return (
     <div className="w-full">
       <div className="container mx-auto text-center">
-        <h2 className="mb-4">
+        <h2 className="mb-4 fade-up">
           How VibraHire Thinks, Matches, and Acts
         </h2>
-        <p className="mb-12 max-w-3xl mx-auto">
+        <p className="mb-12 max-w-3xl mx-auto fade-up">
           VibraHire's architecture is built around contextual comprehension, precision scoring, and autonomous action — bringing logic and empathy into every hiring decision.
         </p>
 
@@ -39,7 +42,7 @@ export default function VibraHireProcess() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-gradient-to-b from-[#08A045] to-[#0B6E4F] rounded-xl p-6 text-white shadow-lg"
+              className="bg-gradient-to-b from-[#08A045] to-[#0B6E4F] rounded-xl p-6 text-white shadow-lg fade-scale"
             >
               <div className="mb-4">
                 <img
@@ -48,17 +51,17 @@ export default function VibraHireProcess() {
                   className="w-full h-48 object-cover rounded-xl"
                 />
               </div>
-              <h3 className="mb-3">{step.title}</h3>
-              <p className="">{step.description}</p>
+              <h3 className="mb-3 fade-up">{step.title}</h3>
+              <p className="fade-up">{step.description}</p>
             </div>
           ))}
         </div>
 
         <div className="mt-12 text-center flex justify-center items-center space-x-3">
-          <p className="">
+          <p className="fade-scale">
             It's not just automation.
           </p>
-          <span className="tooltip text-white ">
+          <span className="tooltip text-white fade-scale">
             It's Agentic Decision Intelligence.
           </span>
         </div>

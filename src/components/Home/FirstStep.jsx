@@ -1,13 +1,11 @@
 "use client";
-
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsapAnimations } from "../Animation/Animations";
 import Img1 from "../../../public/images/UnderstandImg.png";
 import Img2 from "../../../public/images/Precision.png";
 import Img3 from "../../../public/images/Autonomy.png";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
@@ -31,30 +29,11 @@ const features = [
 ];
 
 export default function AgenticIntelligence() {
-  const fadeUpRef = useRef(null);
-  useEffect(() => {
-    if (!fadeUpRef.current) return;
-
-    gsap.fromTo(
-      fadeUpRef.current,
-      { autoAlpha: 0, y: 40 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: fadeUpRef.current,
-          start: "top 80%",
-          toggleActions: "restart pause reverse reset",
-        },
-      }
-    );
-  }, []);
+  gsapAnimations();
   return (
     <div className="bg-white w-full">
       <div className="container mx-auto flex items-center justify-center">
-        <div className="text-center flex items-center justify-center flex-col" ref={fadeUpRef}>
+        <div className="text-center flex items-center justify-center flex-col fade-up">
           <h1 className="mb-4 text-center">Your first step toward Agentic Intelligence.</h1>
           <p className="max-w-2xl mx-auto">
             Saysri builds Agentic AI that goes beyond logic, understanding context, learning independently, and driving enterprise transformation with purpose.
