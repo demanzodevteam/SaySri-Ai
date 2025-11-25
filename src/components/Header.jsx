@@ -254,7 +254,7 @@ export default function Navbar() {
               {/* CENTER: Nav (centered) */}
               <div className="flex-1 flex justify-center">
                 {/* Desktop links only (hidden on small screens) */}
-                <div className="hidden md:flex items-center space-x-4 lg:space-x-1">
+                <div className="hidden lg:flex items-center space-x-4 lg:space-x-1">
                   {navigation.map((item) =>
                     item.children ? (
                       <Menu
@@ -327,7 +327,7 @@ export default function Navbar() {
                 </button>
 
                 {/* Mobile menu button (hamburger) - shown on small screens */}
-                <div className="sm:hidden">
+                <div className="lg:hidden">
                   <Disclosure.Button className="group inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
                     <span className="sr-only">Open main menu</span>
                     {open ? (
@@ -342,7 +342,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Panel (full-width stacked) */}
-          <Disclosure.Panel className="sm:hidden z-50">
+          <Disclosure.Panel className="lg:hidden z-50">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (
                 <div key={item.name}>
@@ -351,7 +351,7 @@ export default function Navbar() {
                     href={item.href}
                     aria-current={item.current ? "page" : undefined}
                     className={classNames(
-                      item.current ? "bg-indigo-600 text-white" : "text-gray-300 hover:bg-white/10 hover:text-white",
+                      item.current ? "bg-[#8CB183] text-white" : "text-black hover:bg-white/10 hover:text-white",
                       "block rounded-md px-3 py-2 text-base font-medium"
                     )}
                   >
@@ -364,7 +364,7 @@ export default function Navbar() {
                         <a
                           key={child.name}
                           href={child.href}
-                          className="block rounded-md px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5"
+                          className="block rounded-md px-3 py-2  text-gray-900 hover:text-gray-800 hover:bg-white/5"
                         >
                           {child.name}
                         </a>
@@ -375,11 +375,11 @@ export default function Navbar() {
               ))}
 
               {/* Mobile CTA full width */}
-              <div className="mt-3 px-2">
+              {/* <div className="mt-3 px-2">
                 <a href="#" className="block w-full text-center rounded-md bg-white text-black font-semibold px-4 py-2">
                   Get a Demo
                 </a>
-              </div>
+              </div> */}
             </div>
           </Disclosure.Panel>
         </>
