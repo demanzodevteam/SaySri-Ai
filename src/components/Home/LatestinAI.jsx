@@ -1,9 +1,35 @@
-import React from "react";
-import Img1 from "../../public/images/Robot.webp"
-import Img2 from "../../public/images/Tablet.webp"
-import Img3 from "../../public/images/Fighter.webp"
+"use client";
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Img1 from "../../../public/images/Robot.webp"
+import Img2 from "../../../public/images/Tablet.webp"
+import Img3 from "../../../public/images/Fighter.webp"
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function LatestInAI() {
+  const fadeUpRef = useRef(null);
+  useEffect(() => {
+    const elems = gsap.utils.toArray(".fade-up");
+    elems.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { autoAlpha: 0, y: 40 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "restart none none reset",
+          },
+        }
+      );
+    });
+  }, []);
   const articles = [
     {
       title: "How AI Is Redefining Recruitment in 2025",
@@ -25,17 +51,17 @@ export default function LatestInAI() {
   return (
     <div className="bg-white">
       <div className="container mx-auto">
-        <h2 className="mb-12 text-center">
+        <h2 className="fade-up mb-12 text-center">
           Stay Ahead with the Latest in AI and Automation
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="fade-up grid grid-cols-1 md:grid-cols-3 gap-4">
           {articles.map((article, index) => (
             <div
               key={index}
               className="bg-white flex overflow-hidden transition-all gap-3"
             >
-              <img src={article.image} alt=""className=" h-30 w-30 object-cover rounded-xl"/>
+              <img src={article.image} alt="" className=" h-30 w-30 object-cover rounded-xl" />
               <div className="my-auto">
                 <p className="text-[21px] leading-[29px] font-bold  mb-1 font-['Col_Sans',_sans-serif]">
                   {article.title}

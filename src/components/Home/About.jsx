@@ -1,10 +1,13 @@
-import React from "react";
-import Person1 from "../../public/images/Person1.png"
-import Person2 from "../../public/images/Person2.png"
-import Person3 from "../../public/images/Person3.png"
-import Person4 from "../../public/images/Person4.png"
-import Person5 from "../../public/images/Person5.png"
-
+"use client"
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Person1 from "../../../public/images/Person1.png"
+import Person2 from "../../../public/images/Person2.png"
+import Person3 from "../../../public/images/Person3.png"
+import Person4 from "../../../public/images/Person4.png"
+import Person5 from "../../../public/images/Person5.png"
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HumanAboutAI() {
     const teamMembers = [
@@ -34,10 +37,32 @@ export default function HumanAboutAI() {
             image: Person5.src,
         },
     ];
+    const fadeUpRef = useRef(null);
+    useEffect(() => {
+        const elems = gsap.utils.toArray(".fade-up");
+        elems.forEach((el) => {
+            gsap.fromTo(
+                el,
+                { autoAlpha: 0, y: 40 },
+                {
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 80%",
+                        toggleActions: "restart none none reset",
+                    },
+                }
+            );
+        });
+    }, []);
+
 
     return (
         <div className="bg-white container space-y-20">
-            <div className="text-center border-t border-[#FEF9F8] pt-8">
+            <div className="text-center border-t border-[#FEF9F8] pt-8 fade-up" >
                 <h1 className="mb-4 text-black">
                     Ready to Experience Smarter Business Automation?
                 </h1>
@@ -54,7 +79,7 @@ export default function HumanAboutAI() {
                 </div>
             </div>
 
-            <div className="mx-auto relative z-10">
+            <div className="mx-auto relative z-10 fade-up" >
                 <div className="mb-12 md:px-14 flex flex-col md:flex-row justify-center md:gap-10">
                     <h1 className="mb-4">
                         About the founders
@@ -65,24 +90,24 @@ export default function HumanAboutAI() {
                 </div>
 
                 <div className="my-auto flex flex-col md:flex-row items-center justify-between gap-14 ">
-                        <div className="w-full md:w-1/2">
-                            <img src={Person4.src} alt="" className="w-full h-[520px] object-cover rounded-xl"/>
-                        </div>
-                        <div className="w-full md:w-1/2">
-                            <h2 className=" font-normal mb-4 text-black">
-                                About th founder
-                            </h2>
-                            <p className="mb-8 text-black">
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum corrupti voluptatibus, impedit repellendus cum totam suscipit optio beatae pariatur. Corporis eos cum eius obcaecati vel, modi, dolorem ad illo, praesentium libero velit facere est suscipit? Reiciendis pariatur doloremque quos perspiciatis quasi saepe inventore ipsa eveniet maiores, porro voluptatibus, laudantium dignissimos nesciunt nemo. Exercitationem autem nesciunt hic accusantium fugiat id, delectus fuga voluptatum perspiciatis illo laboriosam consequuntur molestias nam, error quidem pariatur corporis. Quas magni, fugit at facilis ut voluptatibus ullam qui consequatur dignissimos rerum fuga? Fugit corporis dicta veritatis porro officiis assumenda autem laudantium, fugiat commodi perferendis aspernatur sapiente rerum.From recruitment to business intelligence, Saysri.ai builds AI agents that adapt to your enterprise and execute with precision.</p>
+                    <div className="w-full md:w-1/2">
+                        <img src={Person4.src} alt="" className="w-full h-[520px] object-cover rounded-xl" />
+                    </div>
+                    <div className="w-full md:w-1/2">
+                        <h2 className=" font-normal mb-4 text-black">
+                            About th founder
+                        </h2>
+                        <p className="mb-8 text-black">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum corrupti voluptatibus, impedit repellendus cum totam suscipit optio beatae pariatur. Corporis eos cum eius obcaecati vel, modi, dolorem ad illo, praesentium libero velit facere est suscipit? Reiciendis pariatur doloremque quos perspiciatis quasi saepe inventore ipsa eveniet maiores, porro voluptatibus, laudantium dignissimos nesciunt nemo. Exercitationem autem nesciunt hic accusantium fugiat id, delectus fuga voluptatum perspiciatis illo laboriosam consequuntur molestias nam, error quidem pariatur corporis. Quas magni, fugit at facilis ut voluptatibus ullam qui consequatur dignissimos rerum fuga? Fugit corporis dicta veritatis porro officiis assumenda autem laudantium, fugiat commodi perferendis aspernatur sapiente rerum.From recruitment to business intelligence, Saysri.ai builds AI agents that adapt to your enterprise and execute with precision.</p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                                <button className="bg-[#8CB183] text-white px-6 py-3 rounded-xl font-semibold border-3 border-transparent hover:bg-transparent hover:text-[#8CB183] hover:border-[#8CB183] transition hover:cursor-pointer">
-                                    Contact us
-                                </button>
-                            </div>
+                        <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                            <button className="bg-[#8CB183] text-white px-6 py-3 rounded-xl font-semibold border-3 border-transparent hover:bg-transparent hover:text-[#8CB183] hover:border-[#8CB183] transition hover:cursor-pointer">
+                                Contact us
+                            </button>
                         </div>
-                       
-                    </div>    
+                    </div>
+
+                </div>
                 {/* <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-12">
                     {teamMembers.map((member, index) => (
                         <div key={index} className="text-center">

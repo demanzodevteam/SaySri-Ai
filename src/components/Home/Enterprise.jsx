@@ -66,8 +66,8 @@
 
 
 import React from 'react';
-import GlobeImg from '../../public/images/hero-img.png'
-import TrustImg from '../../public/images/Trusted.png'
+import GlobeImg from '../../../public/images/hero-img.png'
+import TrustImg from '../../../public/images/Trusted.png'
 
 const EnterpriseAI = () => {
     return (
