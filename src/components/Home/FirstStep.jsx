@@ -6,7 +6,7 @@ import { gsapAnimations } from "../Animation/Animations";
 import Img1 from "../../../public/images/UnderstandImg.png";
 import Img2 from "../../../public/images/Precision.png";
 import Img3 from "../../../public/images/Autonomy.png";
-
+gsap.registerPlugin(ScrollTrigger);
 const features = [
   {
     titleBg: "Cognition",
@@ -42,7 +42,7 @@ export default function AgenticIntelligence() {
       </div>
 
       <div className="max-w-4xl mx-auto items-center">
-        <div className="space-y-8 md:space-y-24 pb-20">
+        <div className="space-y-8 md:space-y-40 pb-20">
           {features.map((feature, index) => (
             <FeatureItem
               key={index}
@@ -67,24 +67,24 @@ function FeatureItem({ feature, index }) {
     const cardEl = cardRef.current;
     if (!root || !titleEl || !cardEl) return;
 
-    gsap.set(titleEl, { scale: 1, opacity: 1, transformOrigin: "50% 50%" });
+    gsap.set(titleEl, { scale: 0.7, opacity: 0, transformOrigin: "50% 50%" });
     gsap.set(cardEl, { y: 20, opacity: 0 });
 
-    const titleTrigger = ScrollTrigger.create({
+    const titleRevealTrigger = ScrollTrigger.create({
       trigger: root,
-      start: "top 45%",
-      end: "top 85%",
+      start: "top 60%",
+      end: "bottom 40%",
       onEnter: () => {
         gsap.to(titleEl, {
-          scale: 0.7,
-          opacity: 0.2,
-          duration: 0.32,
+          scale: 1,
+          opacity: 1,
+          duration: 0.35,
           ease: "power2.out",
           delay: 0.04 + index * 0.06,
         });
       },
       onLeaveBack: () => {
-        gsap.to(titleEl, { scale: 1, opacity: 1, duration: 0.3, ease: "power2.out" });
+        gsap.to(titleEl, { scale: 0.7, opacity: 0, duration: 0.25, ease: "power2.out" });
       },
     });
 
@@ -100,13 +100,21 @@ function FeatureItem({ feature, index }) {
           ease: "power2.out",
           delay: 0.16 + index * 0.1,
         });
+        gsap.to(titleEl, {
+          scale: 0.7,
+          opacity: 0.2,
+          duration: 0.32,
+          ease: "power2.out",
+          delay: 0.30 + index * 0.1,  
+        });
       },
       onLeaveBack: () => {
         gsap.to(cardEl, { y: 20, opacity: 0, duration: 0.3, ease: "power1.out" });
+        gsap.to(titleEl, { scale: 1, opacity: 1, duration: 0.25, ease: "power2.out" });
       },
     });
     return () => {
-      titleTrigger.kill();
+      titleRevealTrigger.kill();
       cardTrigger.kill();
     };
   }, [index]);
@@ -121,6 +129,7 @@ function FeatureItem({ feature, index }) {
       >
         {feature.titleBg}
       </div>
+
       <div
         ref={cardRef}
         className="shadow-[0_0_84px_0_rgba(210,210,210,0.8)] bg-white relative bg-gradient-to-b from-[#CFEFD0]/50 to-[#F8E4CB]/50 text-black px-6 py-10 rounded-2xl max-w-[280px] z-10 text-center space-y-4"
@@ -134,19 +143,15 @@ function FeatureItem({ feature, index }) {
     </div>
   );
 }
-
-
 // "use client";
-
 // import React, { useRef, useEffect } from "react";
 // import gsap from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import Img1 from "../../public/images/UnderstandImg.png";
-// import Img2 from "../../public/images/Precision.png";
-// import Img3 from "../../public/images/Autonomy.png";
-
+// import { gsapAnimations } from "../Animation/Animations";
+// import Img1 from "../../../public/images/UnderstandImg.png";
+// import Img2 from "../../../public/images/Precision.png";
+// import Img3 from "../../../public/images/Autonomy.png";
 // gsap.registerPlugin(ScrollTrigger);
-
 // const features = [
 //   {
 //     titleBg: "Cognition",
@@ -169,11 +174,12 @@ function FeatureItem({ feature, index }) {
 // ];
 
 // export default function AgenticIntelligence() {
+//   gsapAnimations();
 //   return (
 //     <div className="bg-white w-full">
 //       <div className="container mx-auto flex items-center justify-center">
-//         <div className="text-center flex items-center justify-center flex-col">
-//           <h1 className="font-bold mb-4 text-center">Your first step toward Agentic Intelligence.</h1>
+//         <div className="text-center flex items-center justify-center flex-col fade-up">
+//           <h1 className="mb-4 text-center">Your first step toward Agentic Intelligence.</h1>
 //           <p className="max-w-2xl mx-auto">
 //             Saysri builds Agentic AI that goes beyond logic, understanding context, learning independently, and driving enterprise transformation with purpose.
 //           </p>
@@ -181,7 +187,7 @@ function FeatureItem({ feature, index }) {
 //       </div>
 
 //       <div className="max-w-4xl mx-auto items-center">
-//         <div className="space-y-24 pb-20">
+//         <div className="space-y-8 md:space-y-40 pb-20">
 //           {features.map((feature, index) => (
 //             <FeatureItem
 //               key={index}
@@ -254,7 +260,7 @@ function FeatureItem({ feature, index }) {
 //     <div ref={rootRef} className="relative flex justify-center items-center">
 //       <div
 //         ref={titleRef}
-//         className="absolute text-[220px] font-bold text-black select-none pointer-events-none"
+//         className="absolute text-[80px] md:text-[150px] lg:text-[220px] font-bold text-black select-none pointer-events-none"
 //         aria-hidden
 //         style={{ transformOrigin: "50% 50%" }}
 //       >
@@ -267,9 +273,10 @@ function FeatureItem({ feature, index }) {
 //         <div className="p-3 rounded-md mb-4 flex justify-center items-center">
 //           <img src={feature.img} alt={`${feature.titleBg} Illustration`} className="h-14 w-14" />
 //         </div>
-//         <h6 className="font-bold">{feature.heading}</h6>
+//         <h6 className="font-normal">{feature.heading}</h6>
 //         <p className="mt-2">{feature.description}</p>
 //       </div>
 //     </div>
 //   );
 // }
+

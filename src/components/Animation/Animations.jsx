@@ -70,6 +70,7 @@ export const gsapAnimations = () => {
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
+      gsap.globalTimeline.clear();
     };
   }, []);
 };
