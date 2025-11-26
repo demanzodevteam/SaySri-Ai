@@ -123,7 +123,7 @@ function FeatureItem({ feature, index }) {
     <div ref={rootRef} className="relative flex justify-center items-center">
       <div
         ref={titleRef}
-        className="absolute text-[80px] md:text-[150px] lg:text-[220px] font-bold text-black select-none pointer-events-none"
+        className="absolute text-[80px] md:text-[150px] lg:text-[190px] font-bold text-black select-none pointer-events-none"
         aria-hidden
         style={{ transformOrigin: "50% 50%" }}
       >

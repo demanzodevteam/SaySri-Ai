@@ -3,10 +3,10 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsapAnimations } from "../Animation/Animations";
-import ConeImg from "../../../public/images/Cubecone.webp";
-import ShapeTextureImg from "../../../public/images/Shapetexture.webp";
-import Girl1Img from "../../../public/images/Girl1.webp";
-import Girl2Img from "../../../public/images/Girl2.webp";
+import Img1 from "../../../public/images/Img1.webp";
+import Img2 from "../../../public/images/Img2.webp";
+import Img3 from "../../../public/images/Img3.webp";
+import Img4 from "../../../public/images/Img4.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,28 +19,28 @@ export default function MeetSaysri() {
             title: "VibraHire by Saysri",
             description:
                 "Smarter hiring starts here. AI that understands people, not just resumes, for faster, bias-free recruitment.",
-            image: ShapeTextureImg.src,
-            bgType: "bg-contain",
+            image: Img1.src,
+            bgType: "bg-cover",
         },
         {
             title: "IntelliBooks by Saysri",
             description:
                 "AI that transforms documents into decisions automating reports, insights, and enterprise data processing.",
-            image: ConeImg.src,
+            image: Img2.src,
             bgType: "bg-cover",
         },
         {
             title: "AI Agents",
             description:
                 "Collaborate with Saysri to architect custom AI ecosystems designed for automation, autonomy, and growth.",
-            image: Girl2Img.src,
+            image: Img3.src,
             bgType: "bg-cover",
         },
         {
             title: "Startup & Enterprise Acceleration",
             description:
                 "We empower businesses of all sizes with tools, automation, and strategic technology support that streamline operations and unlock growth",
-            image: Girl1Img.src,
+            image: Img4.src,
             bgType: "bg-cover",
         },
     ];

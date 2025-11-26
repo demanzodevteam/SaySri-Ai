@@ -1,3 +1,55 @@
+import React from 'react';
+import GlobeImg from '../../../public/images/hero-img.png'
+import TrustImg from '../../../public/images/Trusted.png'
+
+const EnterpriseAI = () => {
+    return (
+        <section className='relative w-full overflow-hidden '>
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-full h-full object-cover"
+            >
+                <source src="/images/Herovideo.mp4" type="video/mp4" />
+            </video>
+
+            <div className="absolute inset-0 bg-black/2"></div>
+            <div className="relative bg-transparent w-full">
+                <div className="text-white container mx-auto min-h-[500px] md:min-h-[600px] flex items-center ">
+                    <div className="my-auto flex flex-col md:flex-row items-center justify-between">
+
+                        {/* Left Content Section */}
+                        <div className="w-full lg:w-1/2">
+                            <h1 className=" font-normal mb-4 text-black">
+                                Enterprise-Grade Agentic AI
+                                That Thinks, Learns, and Acts for Your Business.
+                            </h1>
+                            <p className="mb-8 text-black">
+                                From recruitment to business intelligence, Saysri.ai builds AI agents that adapt to your enterprise and execute with precision.</p>
+
+                            {/* Buttons */}
+                            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                                <button className="bg-[#8CB183] text-white px-6 py-3 rounded-xl font-semibold border-2 border-transparent hover:bg-transparent hover:text-[#8CB183] hover:border-[#8CB183] transition hover:cursor-pointer">
+                                    SEE VIBRAHIRE IN ACTION
+                                </button>
+                                <button className="bg-transparent border-2 border-transparent text-black px-6 py-3 rounded-xl font-bold hover:bg-white hover:text-black transition hover:cursor-pointer">
+                                    MEET THE TEAM BEHIND IT {String.fromCharCode(8594)}
+                                </button>
+                            </div>
+                        </div>
+                       
+                    </div>                   
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default EnterpriseAI;
+
+
 // import React from 'react';
 // import GlobeImg from '../../public/images/hero-img.png'
 // import TrustImg from '../../public/images/Trusted.png'
@@ -63,55 +115,3 @@
 // };
 
 // export default EnterpriseAI;
-
-
-import React from 'react';
-import GlobeImg from '../../../public/images/hero-img.png'
-import TrustImg from '../../../public/images/Trusted.png'
-
-const EnterpriseAI = () => {
-    return (
-        <section className='relative w-full overflow-hidden '>
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute top-0 left-0 w-full h-full object-cover"
-            >
-                <source src="/images/Herovideo.mp4" type="video/mp4" />
-            </video>
-
-            <div className="absolute inset-0 bg-black/2"></div>
-            <div className="relative bg-transparent w-full">
-                <div className="text-white container mx-auto min-h-[500px] md:min-h-[600px] flex items-center ">
-                    <div className="my-auto flex flex-col md:flex-row items-center justify-between">
-
-                        {/* Left Content Section */}
-                        <div className="w-full lg:w-1/2">
-                            <h1 className=" font-normal mb-4 text-black">
-                                Enterprise-Grade Agentic AI
-                                That Thinks, Learns, and Acts for Your Business.
-                            </h1>
-                            <p className="mb-8 text-black">
-                                From recruitment to business intelligence, Saysri.ai builds AI agents that adapt to your enterprise and execute with precision.</p>
-
-                            {/* Buttons */}
-                            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                                <button className="bg-[#8CB183] text-white px-6 py-3 rounded-xl font-semibold border-2 border-transparent hover:bg-transparent hover:text-[#8CB183] hover:border-[#8CB183] transition hover:cursor-pointer">
-                                    SEE VIBRAHIRE IN ACTION
-                                </button>
-                                <button className="bg-transparent border-2 border-transparent text-black px-6 py-3 rounded-xl font-bold hover:bg-white hover:text-black transition hover:cursor-pointer">
-                                    MEET THE TEAM BEHIND IT {String.fromCharCode(8594)}
-                                </button>
-                            </div>
-                        </div>
-                       
-                    </div>                   
-                </div>
-            </div>
-        </section>
-    );
-};
-
-export default EnterpriseAI;

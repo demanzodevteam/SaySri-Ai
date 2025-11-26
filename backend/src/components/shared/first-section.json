@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_first_sections",
+  "info": {
+    "displayName": "First Section",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "BackgroundVideo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
