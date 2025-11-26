@@ -226,7 +226,7 @@ const navigation = [
   },
   { name: "Partners", href: "#", current: false },
   { name: "Careers", href: "#", current: false },
-  { name: "Contact", href: "#", current: false },
+  { name: "Contact", href: "/contact", current: false },
 ];
 
 function classNames(...classes) {
