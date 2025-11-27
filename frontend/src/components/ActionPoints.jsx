@@ -32,10 +32,9 @@ export default function ActionPoints() {
             ))}
           </div>
 
-          <div className="w-[100%] md:w-[40%] bg-green-600 text-white p-9 rounded-2xl">
-            <p className="text-xl font-semibold">
-              The result: faster hiring, stronger alignment, and scalable intelligence that grows with your enterprise.
-            </p>
+          <div className="w-[100%] md:w-[40%] bg-green-600 text-white p-9 rounded-2xl space-y-2">
+            <h5 className="">The result:</h5>
+            <p className="text-lg font-semibold">Faster hiring, stronger alignment, and scalable intelligence that grows with your enterprise.</p>
           </div>
         </div>
       </div>

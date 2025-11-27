@@ -42,7 +42,7 @@ export default function VibraHireProcess() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="bg-gradient-to-b from-[#08A045] to-[#0B6E4F] rounded-xl p-6 text-white shadow-lg fade-scale"
+              className="bg-gradient-to-b from-[#08A045] to-[#0B6E4F] rounded-xl p-6 text-white shadow-lg fade-up"
             >
               <div className="mb-4">
                 <img
@@ -51,8 +51,8 @@ export default function VibraHireProcess() {
                   className="w-full h-48 object-cover rounded-xl"
                 />
               </div>
-              <h3 className="mb-3 fade-up">{step.title}</h3>
-              <p className="fade-up">{step.description}</p>
+              <h3 className="mb-3">{step.title}</h3>
+              <p className="">{step.description}</p>
             </div>
           ))}
         </div>
