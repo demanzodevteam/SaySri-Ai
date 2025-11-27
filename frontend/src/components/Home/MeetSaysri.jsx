@@ -3,10 +3,10 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsapAnimations } from "../Animation/Animations";
-import Img1 from "../../../public/images/Img1.webp";
-import Img2 from "../../../public/images/Img2.webp";
-import Img3 from "../../../public/images/Img3.webp";
-import Img4 from "../../../public/images/Img4.webp";
+import Img1 from "../../../public/images/img6.webp";
+import Img2 from "../../../public/images/img8.webp";
+import Img3 from "../../../public/images/img10.webp";
+import Img4 from "../../../public/images/img11.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
