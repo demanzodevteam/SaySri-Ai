@@ -52,7 +52,7 @@ export default function MeetSaysri() {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top top",
+                    start: "top -20",
                     end: () => "+=" + (window.innerHeight * (totalCards - 1)),
                     scrub: 1,
                     pin: true,          
@@ -68,7 +68,6 @@ export default function MeetSaysri() {
 
             cardsRef.current.forEach((card, index) => {
                 if (!card) return;
-
                 const label = `card-${index}`;
                 tl.addLabel(label);
                 tl.fromTo(
@@ -91,7 +90,7 @@ export default function MeetSaysri() {
     return (
         <section
             ref={sectionRef}
-            className="w-full min-h-screen flex items-center justify-center ov  erflow-hidden"
+            className="w-full min-h-screen flex items-center justify-center overflow-hidden"
         >
             <div className="w-full container" >
                 <div className="py-8">
@@ -148,13 +147,14 @@ export default function MeetSaysri() {
 // "use client";
 // import React, { useRef } from "react";
 // import { motion, useScroll, useTransform } from "framer-motion";
-// import ConeImg from "../../../public/images/Cubecone.webp"
-// import ShapeTextureImg from "../../../public/images/Shapetexture.webp"
-// import GeometricImg from "../../../public/images/Geometric.webp"
-// import Girl1Img from "../../../public/images/Girl1.webp"
-// import Girl2Img from "../../../public/images/Girl2.webp"
+// import { gsapAnimations } from "../Animation/Animations";
+// import Img1 from "../../../public/images/img6.webp";
+// import Img2 from "../../../public/images/img8.webp";
+// import Img3 from "../../../public/images/img10.webp";
+// import Img4 from "../../../public/images/img11.webp";
 
 // export default function MeetSaysri() {
+//     gsapAnimations();
 //     const containerRef = useRef(null);
 
 //     // Scroll progress across the entire section
@@ -185,28 +185,28 @@ export default function MeetSaysri() {
 //             title: "VibraHire by Saysri",
 //             description:
 //                 "Smarter hiring starts here. AI that understands people, not just resumes, for faster, bias-free recruitment.",
-//             image: ShapeTextureImg.src,
+//             image: Img1.src,
 //             bgType: "bg-contain"
 //         },
 //         {
 //             title: "IntelliBooks by Saysri",
 //             description:
 //                 "AI that transforms documents into decisions automating reports, insights, and enterprise data processing.",
-//             image: ConeImg.src,
+//             image: Img2.src,
 //             bgType: "bg-cover"
 //         },
 //         {
 //             title: "AI Agentic Consultation",
 //             description:
 //                 "Collaborate with Saysri to architect custom AI ecosystems designed for automation, autonomy, and growth.",
-//             image: Girl2Img.src,
+//             image: Img3.src,
 //             bgType: "bg-cover"
 //         },
 //         {
 //             title: "Sartup & Enterprise Acceleration",
 //             description:
 //                 "Smart, scalable solutions that help you move faster.",
-//             image: Girl1Img.src,
+//             image: Img4.src,
 //             bgType: "bg-cover"
 //         }
 //     ];
@@ -251,19 +251,19 @@ export default function MeetSaysri() {
 //             <div className="py-8">
 //                 <div className="mx-auto">
 //                     <div className="text-center mb-12">
-//                         <h1 className="font-  mb-4">
+//                         <h1 className="font-  mb-4 fade-up">
 //                             Introducing Saysri AI Suite, Engineered for Intelligence.
 //                         </h1>
-//                         <p className="text-[#1E1E1E] max-w-4xl mx-auto">
+//                         <p className="text-[#1E1E1E] max-w-4xl mx-auto fade-up">
 //                             Power your enterprise with intelligence that thinks, learns, and evolves. Saysri's AI Suite fuses intelligence, automation, and adaptability, empowering teams to move from reactive workflows to self-evolving systems.
 //                         </p>
 //                     </div>
 
 //                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 ">
 //                         {Data.map((item, index) => (
-//                             <div key={index} className="rounded-2xl overflow-hidden group">
+//                             <div key={index} className="rounded-2xl overflow-hidden group fade-scale">
 //                                 <div
-//                                     className={`relative h-95 ${item.bgType} bg-center flex flex-col justify-end p-6 transition-all duration-500 ease-in-out group-hover:scale-105`}
+//                                     className={`relative h-95 ${item.bgType} bg-center flex flex-col justify-end p-6 transition-all duration-500 ease-in-out group-hover:scale-105 `}
 //                                     style={{ backgroundImage: `url(${item.image})` }}
 //                                 >
 //                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#060606]/40 to-[#060606]/80"></div>

@@ -7,6 +7,7 @@ import Img1 from "../../../public/images/UnderstandImg.png";
 import Img2 from "../../../public/images/Precision.png";
 import Img3 from "../../../public/images/Autonomy.png";
 gsap.registerPlugin(ScrollTrigger);
+
 const features = [
   {
     titleBg: "Cognition",
@@ -67,55 +68,94 @@ function FeatureItem({ feature, index }) {
     const cardEl = cardRef.current;
     if (!root || !titleEl || !cardEl) return;
 
-    gsap.set(titleEl, { scale: 0.7, opacity: 0, transformOrigin: "50% 50%" });
+    gsap.set(titleEl, { scale: 0.85, opacity: 0, transformOrigin: "50% 50%" });
     gsap.set(cardEl, { y: 20, opacity: 0 });
 
-    const titleRevealTrigger = ScrollTrigger.create({
+    const titleEnter = ScrollTrigger.create({
       trigger: root,
-      start: "top 60%",
-      end: "bottom 40%",
+      start: "top 65%",   
+      end: "top 58%",    
       onEnter: () => {
         gsap.to(titleEl, {
           scale: 1,
           opacity: 1,
-          duration: 0.35,
+          duration: 0.45,
           ease: "power2.out",
-          delay: 0.04 + index * 0.06,
+          delay: 0.03 + index * 0.04,
+          overwrite: true,
         });
       },
       onLeaveBack: () => {
-        gsap.to(titleEl, { scale: 0.7, opacity: 0, duration: 0.25, ease: "power2.out" });
+        gsap.to(titleEl, {
+          scale: 0.85,
+          opacity: 0,
+          duration: 0.45,
+          ease: "power2.out",
+          delay: 0.03 + index * 0.04,
+          overwrite: true,
+        });
       },
     });
 
-    const cardTrigger = ScrollTrigger.create({
+    const titleDim = ScrollTrigger.create({
       trigger: root,
-      start: "top 45%",
-      end: "top 30%",
+      start: "top 45%",   
+      end: "top 38%",    
+      onEnter: () => {
+        gsap.to(titleEl, {
+          scale: 0.95,
+          opacity: 0.2,
+          duration: 0.32,
+          ease: "power2.out",
+          delay: 0.05 + index * 0.05,
+          overwrite: true,
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(titleEl, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.28,
+          ease: "power2.out",
+          overwrite: true,
+        });
+      },
+    });
+    const cardReveal = ScrollTrigger.create({
+      trigger: root,
+      start: "top 35%",   
+      end: "top 10%",
       onEnter: () => {
         gsap.to(cardEl, {
           y: 0,
           opacity: 1,
           duration: 0.5,
           ease: "power2.out",
-          delay: 0.16 + index * 0.1,
-        });
-        gsap.to(titleEl, {
-          scale: 0.7,
-          opacity: 0.2,
-          duration: 0.32,
-          ease: "power2.out",
-          delay: 0.30 + index * 0.1,  
+          delay: 0.12 + index * 0.06,
+          overwrite: true,
         });
       },
       onLeaveBack: () => {
-        gsap.to(cardEl, { y: 20, opacity: 0, duration: 0.3, ease: "power1.out" });
-        gsap.to(titleEl, { scale: 1, opacity: 1, duration: 0.25, ease: "power2.out" });
+        gsap.to(cardEl, {
+          y: 20,
+          opacity: 0,
+          duration: 0.28,
+          ease: "power1.out",
+          overwrite: true,
+        });
+        gsap.to(titleEl, {
+          scale: 1,
+          opacity: 1,
+          duration: 0.25,
+          ease: "power2.out",
+          overwrite: true,
+        });
       },
     });
     return () => {
-      titleRevealTrigger.kill();
-      cardTrigger.kill();
+      titleEnter.kill();
+      titleDim.kill();
+      cardReveal.kill();
     };
   }, [index]);
 
@@ -143,6 +183,8 @@ function FeatureItem({ feature, index }) {
     </div>
   );
 }
+
+  
 // "use client";
 // import React, { useRef, useEffect } from "react";
 // import gsap from "gsap";
@@ -221,7 +263,7 @@ function FeatureItem({ feature, index }) {
 //       end: "top 85%",
 //       onEnter: () => {
 //         gsap.to(titleEl, {
-//           scale: 0.7,
+//           scale: 0.95,
 //           opacity: 0.2,
 //           duration: 0.32,
 //           ease: "power2.out",
