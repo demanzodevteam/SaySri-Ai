@@ -1,7 +1,7 @@
 import React from 'react';
 import GlobeImg from '../../../public/images/hero-img.png'
 import TrustImg from '../../../public/images/Trusted.png'
-import Sample from "../../components/Animation/sample"
+import SVGFader from "../../components/Animation/SVGFaderCarousel"
 
 const EnterpriseAI = () => {
     return (
@@ -19,7 +19,7 @@ const EnterpriseAI = () => {
             <div className="absolute inset-0 bg-black/2"></div>
             <div className="relative bg-transparent w-full">
                 <div className="text-white container mx-auto !pb-0 flex items-center ">
-                    <div className="my-auto flex flex-col md:flex-row items-center justify-between">
+                    <div className="my-auto flex flex-col lg:flex-row items-center justify-between">
 
                         {/* Left Content Section */}
                         <div className="w-full lg:w-1/2">
@@ -41,7 +41,7 @@ const EnterpriseAI = () => {
                             </div>
                         </div>
                         <div className="w-full lg:w-1/2">
-                            <Sample />
+                            <SVGFader />
                         </div>
                        
                     </div>                   
