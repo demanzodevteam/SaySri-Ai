@@ -33,7 +33,7 @@ h6 {
   font-size: clamp(12px, 0.8vw + 0.6rem, 18px);
 }
 .container {
-  @apply py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 px-4 xl:max-w-[1300px] 2xl:max-w-[1600px];
+  @apply py-4 sm:py-6 md:py-8 lg:py-10 xl:py-12 px-4 xl:max-w-[1300px];
 }
 .tooltip {
   --b: 2em; /* base */

@@ -1,6 +1,7 @@
 import React from 'react';
 import GlobeImg from '../../../public/images/hero-img.png'
 import TrustImg from '../../../public/images/Trusted.png'
+import Sample from "../../components/Animation/sample"
 
 const EnterpriseAI = () => {
     return (
@@ -17,7 +18,7 @@ const EnterpriseAI = () => {
 
             <div className="absolute inset-0 bg-black/2"></div>
             <div className="relative bg-transparent w-full">
-                <div className="text-white container mx-auto min-h-[500px] md:min-h-[600px] flex items-center ">
+                <div className="text-white container mx-auto !pb-0 flex items-center ">
                     <div className="my-auto flex flex-col md:flex-row items-center justify-between">
 
                         {/* Left Content Section */}
@@ -38,6 +39,9 @@ const EnterpriseAI = () => {
                                     MEET THE TEAM BEHIND IT {String.fromCharCode(8594)}
                                 </button>
                             </div>
+                        </div>
+                        <div className="w-full lg:w-1/2">
+                            <Sample />
                         </div>
                        
                     </div>                   
